@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
 		BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC30259F8A8300504181 /* SceneDelegate.swift */; };
 		BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC32259F8A8300504181 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA9FC2E259F8A8300504181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA9FC30259F8A8300504181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA9FC32259F8A8300504181 /* ViewController.swift */,
+				AD42785C259FC5A500C14E46 /* GoalViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */,
 				BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */,
 				BFA9FC75259F931000504181 /* GoalView.swift in Sources */,
+				AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */,
 				BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */,
 				BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */,
 			);
