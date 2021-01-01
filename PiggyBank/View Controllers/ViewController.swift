@@ -9,7 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     //let goal = GoalView()
-    let titleLable = UILabel()
+    
+    
+    let label = UILabel()
+    
     
 
     override func viewDidLoad() {
@@ -17,11 +20,20 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.white
         
+        label.text = "Hello World"
+        label.backgroundColor = UIColor.green
+        self.view.addSubview(label)
         
-        self.view.addSubview(titleLable)
-        titleLable.backgroundColor = UIColor.red
+        label.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
+        label.constrain(width: 100, height: 20)
+        label.textAlignment = .center
+         
+        
+        
+//        self.view.addSubview(titleLable)
+//        titleLable.backgroundColor = UIColor.red
 
-        titleLable.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerYInset: 0, centerXInset: 0)
+//        titleLable.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerYInset: 0, centerXInset: 0)
 //        titleLable.backgroundColor = UIColor.blue
         
 

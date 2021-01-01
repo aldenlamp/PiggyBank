@@ -1,0 +1,19 @@
+//
+//  Appearance.swift
+//  PiggyBank
+//
+//  Created by Alden Lamp on 1/1/21.
+//
+
+import Foundation
+import UIKit
+
+
+class Appearance {
+    
+    static let SIDEBAR_WIDTH: CGFloat = 240
+    static let OVERLAY_FULL_OPACITY : CGFloat = 0.5
+    static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
+    static let SIDEBAR_ANIMATION_DURATION = 0.3
+    
+}
