@@ -43,7 +43,7 @@ class ContainerViewController: UIViewController {
         self.addChild(activeNavigationController)
         activeNavigationController.didMove(toParent: self)
         
-        // TODO: - switch to screen
+        activeNavigationController.switchToScreen(num: 0)
         
         containerOverlay = UIButton(frame: self.view.frame)
         containerOverlay.backgroundColor = UIColor.black
@@ -53,7 +53,7 @@ class ContainerViewController: UIViewController {
         
         containerOverlay.addTarget(self, action: #selector(overlayClicked(sender:)), for: .touchUpInside)
         
-        sidebarController.view.frame = CGRect(x: Appearance.SIDEBAR_WIDTH, y: 0, width: Appearance.SIDEBAR_WIDTH, height: self.view.frame.height)
+        sidebarController.view.frame = CGRect(x: -Appearance.SIDEBAR_WIDTH, y: 0, width: Appearance.SIDEBAR_WIDTH, height: self.view.frame.height)
         view.addSubview(sidebarController.view)
         sidebarController.didMove(toParent: self)
         sidebarController.view.layoutIfNeeded()
