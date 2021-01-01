@@ -23,10 +23,11 @@ class SidebarViewController: UIViewController {
             
             let button = UIButton()
             button.setTitle(buttonData[i].title, for: .normal)
+            button.backgroundColor = UIColor.green
 
             self.view.addSubview(button)
             button.constrain(to: self.view, topInset: CGFloat(70 + i * 70), centerXInset: 0)
-            button.constrain(width: Appearance.SIDEBAR_WIDTH - 40, height: 40)
+            button.constrain(width: Appearance.SIDEBAR_WIDTH, height: 40)
 
             button.tag = i
             button.addTarget(self, action: #selector(handleButtonClicked(sender:)), for: .touchUpInside)
@@ -35,7 +36,7 @@ class SidebarViewController: UIViewController {
     }
     
     @objc func handleButtonClicked(sender: UIButton) {
-        NotificationCenter.default.post(name: NotificationNames.switchScreen.notification, object: nil, userInfo: ["Screen": sender.tag])
+        NotificationCenter.default.post(name: NotificationNames.switchScreen.notification, object: nil, userInfo: ["screen": sender.tag])
     }
     
 }
