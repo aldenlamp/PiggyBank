@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class GoalView: UITableViewCell {
+class GoalTableViewCell: UITableViewCell {
     
     // variables
     var piggyImage = UIImageView()
@@ -17,8 +17,8 @@ class GoalView: UITableViewCell {
     let progressNumberLabel = UILabel()
     let progressBar = UILabel()
     
-    init() {
-        super.init(frame: .zero)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         createGoal()
     }
     
