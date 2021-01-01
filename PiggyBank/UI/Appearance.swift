@@ -11,6 +11,16 @@ import UIKit
 
 class Appearance {
     
+    enum PigColors {
+        case green
+        case blue
+        case red
+        case yellow
+        case orange
+        case purple
+        case pink
+    }
+    
     static let SIDEBAR_WIDTH: CGFloat = 240
     static let OVERLAY_FULL_OPACITY : CGFloat = 0.5
     static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
