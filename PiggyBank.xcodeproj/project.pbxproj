@@ -17,7 +17,7 @@
 		BFA9FC51259F8A8600504181 /* PiggyBankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC50259F8A8600504181 /* PiggyBankUITests.swift */; };
 		BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC61259F8C0C00504181 /* UIView+AutoLayout.swift */; };
 		BFA9FC75259F931000504181 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC74259F931000504181 /* GoalTableViewCell.swift */; };
-		BFC9CD12259FB8DB003A024B /* SidebarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD11259FB8DB003A024B /* SidebarDataSource.swift */; };
+		BFC9CD12259FB8DB003A024B /* NavigationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD11259FB8DB003A024B /* NavigationDataSource.swift */; };
 		BFC9CD18259FBA13003A024B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD17259FBA13003A024B /* ContainerViewController.swift */; };
 		BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD1C259FBA1F003A024B /* SidebarViewController.swift */; };
 		BFC9CD28259FBA38003A024B /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD27259FBA38003A024B /* MainNavigationViewController.swift */; };
@@ -60,7 +60,7 @@
 		BFA9FC52259F8A8600504181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFA9FC61259F8C0C00504181 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		BFA9FC74259F931000504181 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
-		BFC9CD11259FB8DB003A024B /* SidebarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarDataSource.swift; sourceTree = "<group>"; };
+		BFC9CD11259FB8DB003A024B /* NavigationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDataSource.swift; sourceTree = "<group>"; };
 		BFC9CD17259FBA13003A024B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		BFC9CD1C259FBA1F003A024B /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		BFC9CD27259FBA38003A024B /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		BFC9CD10259FB813003A024B /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				BFC9CD11259FB8DB003A024B /* SidebarDataSource.swift */,
+				BFC9CD11259FB8DB003A024B /* NavigationDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -342,7 +342,7 @@
 			files = (
 				BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */,
 				BFC9CD28259FBA38003A024B /* MainNavigationViewController.swift in Sources */,
-				BFC9CD12259FB8DB003A024B /* SidebarDataSource.swift in Sources */,
+				BFC9CD12259FB8DB003A024B /* NavigationDataSource.swift in Sources */,
 				BFC9CD35259FDC9B003A024B /* HistoryViewController.swift in Sources */,
 				BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */,
 				BFA9FC75259F931000504181 /* GoalTableViewCell.swift in Sources */,
