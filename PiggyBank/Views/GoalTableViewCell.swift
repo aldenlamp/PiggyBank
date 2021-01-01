@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class GoalView: UIView {
+class GoalView: UITableViewCell {
     
-    // Varbales
+    // variables
     var piggyImage = UIImageView()
     let container = UIView()
     let goalName = UILabel()
@@ -19,6 +19,7 @@ class GoalView: UIView {
     
     init() {
         super.init(frame: .zero)
+        createGoal()
     }
     
     required init?(coder: NSCoder) {
