@@ -11,14 +11,15 @@ import UIKit
 
 class Appearance {
     
-    enum PigColors: String {
+
+    enum PigColors: String, CaseIterable {
+        case pink = "pink"
+        case red = "red"
+        case orange = "orange"
+        case yellow = "yellow"
         case green = "green"
         case blue = "blue"
-        case red = "red"
-        case yellow = "yellow"
-        case orange = "orange"
         case purple = "purple"
-        case pink = "pink"
     }
     
     static let TABLE_CELL_HEIGHT: CGFloat = 150
