@@ -33,7 +33,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         topBar.addSubview(addButton)
         addButton.constrain(width: 50, height: 50)
-        addButton.constrain(to: topBar, bottomInset: 0, trailingInset: 0)
+        addButton.constrain(to: topBar, bottomInset: 0, trailingInset: -10)
         addButton.setTitle("+", for: .normal)
         addButton.titleLabel?.font =  UIFont(name: "Arial", size: 50)
         addButton.setTitleColor(UIColor.black, for: .normal)
