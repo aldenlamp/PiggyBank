@@ -11,14 +11,15 @@ import UIKit
 
 class Appearance {
     
-    enum PigColors {
-        case green
-        case blue
-        case red
-        case yellow
-        case orange
-        case purple
-        case pink
+
+    enum PigColors: String, CaseIterable {
+        case pink = "pink"
+        case red = "red"
+        case orange = "orange"
+        case yellow = "yellow"
+        case green = "green"
+        case blue = "blue"
+        case purple = "purple"
     }
     
     static let TABLE_CELL_HEIGHT: CGFloat = 150
@@ -26,5 +27,9 @@ class Appearance {
     static let OVERLAY_FULL_OPACITY : CGFloat = 0.5
     static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
     static let SIDEBAR_ANIMATION_DURATION = 0.3
+    
+    enum Font {
+        static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
+    }
     
 }

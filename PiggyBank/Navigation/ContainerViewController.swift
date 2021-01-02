@@ -17,6 +17,8 @@ enum NotificationNames: String {
     case switchScreen = "SwitchScreenNotification"
     case toggleSideBar = "ToggleSideBarNotification"
     case toggleAllowSidebar = "ToggleAllowSideBarNotification"
+    case historyDataLoaded = "HistoryDataLoadedNotification"
+    case goalDataLoaded = "GoalDataLoadedNotification"
     
     var notification : Notification.Name {
         return Notification.Name(rawValue: self.rawValue)
@@ -36,6 +38,10 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        
+        print(DataManager.shared.getId())
+        DataManager.shared.getGoalData()
+        DataManager.shared.getHistoryData()
         
         activeNavigationController = MainNavigationController()
         

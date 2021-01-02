@@ -11,9 +11,10 @@
 		798DAD15EB30547E7EE90E63 /* Pods_PiggyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F821897E7847AF1E0285F013 /* Pods_PiggyBankTests.framework */; };
 		8AE4048AC35DF62F3853867C /* Pods_PiggyBank_PiggyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C55842F5B19087665100E0 /* Pods_PiggyBank_PiggyBankUITests.framework */; };
 		AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEE5259FDEBB00767872 /* GoalData.swift */; };
-		AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */; };
+		AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */; };
 		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
+		BF14972F25A03308009D5610 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14972E25A03308009D5610 /* DataManager.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
@@ -60,10 +61,11 @@
 		8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBankTests.debug.xcconfig"; path = "Target Support Files/Pods-PiggyBankTests/Pods-PiggyBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED8232F67E07E1FA9A50704 /* Pods-PiggyBank-PiggyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank-PiggyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AD11CEE5259FDEBB00767872 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalData.swift; path = "PiggyBank/View Controllers/GoalData.swift"; sourceTree = SOURCE_ROOT; };
-		AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
+		AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF14972E25A03308009D5610 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
 		BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +210,7 @@
 				AD42785C259FC5A500C14E46 /* GoalViewController.swift */,
 				BFC9CD34259FDC9B003A024B /* HistoryViewController.swift */,
 				BFC9CD39259FDCE0003A024B /* ImpactViewController.swift */,
-				AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */,
+				AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -227,6 +229,7 @@
 			children = (
 				AD11CEE5259FDEBB00767872 /* GoalData.swift */,
 				BF8D8C8F259FF02A00861F63 /* GoalModel.swift */,
+				BF14972E25A03308009D5610 /* DataManager.swift */,
 				D7ED7BF625A037950091C2F3 /* HistoryData.swift */,
 			);
 			path = Backend;
@@ -509,7 +512,7 @@
 			files = (
 				BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */,
 				BFC9CD28259FBA38003A024B /* MainNavigationViewController.swift in Sources */,
-				AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */,
+				AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */,
 				BFC9CD12259FB8DB003A024B /* NavigationDataSource.swift in Sources */,
 				BFC9CD35259FDC9B003A024B /* HistoryViewController.swift in Sources */,
 				BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */,
@@ -524,6 +527,7 @@
 				BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */,
 				BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */,
 				BFC9CD3A259FDCE0003A024B /* ImpactViewController.swift in Sources */,
+				BF14972F25A03308009D5610 /* DataManager.swift in Sources */,
 				BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,6 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6DUPJD95N;
 				INFOPLIST_FILE = PiggyBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -713,6 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P6DUPJD95N;
 				INFOPLIST_FILE = PiggyBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

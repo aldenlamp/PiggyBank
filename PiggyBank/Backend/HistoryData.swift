@@ -6,16 +6,29 @@
 //
 
 import Foundation
+
 class HistoryData {
-    var coinValue: Int
-    var dayDate: String
-    var time: String
-    var goal: String
     
-    init(coinValue: Int, dayDate: String, time: String, goal: String) {
-        self.coinValue = coinValue
-        self.dayDate = dayDate
-        self.time = time
-        self.goal = goal
+    var historyID: String
+    var date: Date
+    var length: Int
+    var goalID: String
+    var adCount: Int
+    
+    init(historyID: String, date: Date, length: Int, goalID: String, adCount: Int) {
+        self.historyID = historyID
+        self.date = date
+        self.length = length
+        self.goalID = goalID
+        self.adCount = adCount
+    }
+    
+    func getDictRepresentation() -> [String: Any] {
+        let data = ["startTime": date.timeIntervalSince1970,
+                    "adCount" : adCount,
+                    "length" : length,
+                    "goalID": goalID] as [String : Any]
+        
+        return data as [String : Any]
     }
 }
