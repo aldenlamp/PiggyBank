@@ -58,6 +58,7 @@ class DataManager {
                 
                 self?.historyData.append(historyItem)
             }
+            self?.sortHistoryData()
             NotificationCenter.default.post(name: NotificationNames.historyDataLoaded.notification, object: nil)
         }
     }
@@ -82,6 +83,7 @@ class DataManager {
                 
                 self?.goalData.append(goalItem)
             }
+            self?.addTotal()
             NotificationCenter.default.post(name: NotificationNames.goalDataLoaded.notification, object: nil)
 
         }
@@ -107,7 +109,41 @@ class DataManager {
         }
     }
 
+    func sortHistoryData() {
+        if historyData.count <= 1 {
+            return
+        }
+        
+        for i in 1..<historyData.count - 1 {
+            var maxDate = historyData[i].date
+            var maxIndex = 0
+            for j in i..<historyData.count {
+                if historyData[j].date > maxDate {
+                    maxDate = historyData[j].date
+                    maxIndex = j
+                }
+            }
+            
+            let temp = historyData[i]
+            historyData[i] = historyData[maxIndex]
+            historyData[maxIndex] = temp
+        }
+    }
     
+    
+    
+    func addTotal() {
+        var totalTime = 0
+        for i in historyData {
+            if i.goalID == "total" {
+                totalTime += i.length
+            }
+        }
+        
+        let totalGoal = GoalData(goalID: "total", color: Appearance.TOTAL_GOAL_COLOR, name: "Total", progress: totalTime, goal: 0)
+        goalData.insert(totalGoal, at: 0)
+        
+    }
     
     
 }
