@@ -11,6 +11,7 @@ import UIKit
 class GoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var list = [GoalData]()
+    let addGoalVC = AddGoalViewController()
 
     let tableView = UITableView()
     let topBar = UIView()
@@ -36,6 +37,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         addButton.setTitle("+", for: .normal)
         addButton.titleLabel?.font =  UIFont(name: "Arial", size: 50)
         addButton.setTitleColor(UIColor.black, for: .normal)
+        addButton.addTarget(self, action: #selector(switchToAdd), for: .touchUpInside)
         
         topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
         barLine.constrain(to: self.view, leadingInset: 0, trailingInset: 0)
@@ -67,6 +69,9 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
 
+    }
+    @objc func switchToAdd() {
+        present(addGoalVC, animated: true, completion: nil)
     }
 }
 

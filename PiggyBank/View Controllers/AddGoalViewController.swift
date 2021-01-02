@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-class NewGoalViewController: UIViewController {
+class AddGoalViewController: UIViewController {
     
 }

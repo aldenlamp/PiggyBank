@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,7 @@
 		798DAD15EB30547E7EE90E63 /* Pods_PiggyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F821897E7847AF1E0285F013 /* Pods_PiggyBankTests.framework */; };
 		8AE4048AC35DF62F3853867C /* Pods_PiggyBank_PiggyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C55842F5B19087665100E0 /* Pods_PiggyBank_PiggyBankUITests.framework */; };
 		AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEE5259FDEBB00767872 /* GoalData.swift */; };
-		AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */; };
+		AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */; };
 		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
@@ -59,7 +59,7 @@
 		8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBankTests.debug.xcconfig"; path = "Target Support Files/Pods-PiggyBankTests/Pods-PiggyBankTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ED8232F67E07E1FA9A50704 /* Pods-PiggyBank-PiggyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank-PiggyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AD11CEE5259FDEBB00767872 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalData.swift; path = "PiggyBank/View Controllers/GoalData.swift"; sourceTree = SOURCE_ROOT; };
-		AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
+		AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +129,6 @@
 				8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */,
 				4BF3A7FF184338B78DC0A428 /* Pods-PiggyBankTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,7 +206,7 @@
 				AD42785C259FC5A500C14E46 /* GoalViewController.swift */,
 				BFC9CD34259FDC9B003A024B /* HistoryViewController.swift */,
 				BFC9CD39259FDCE0003A024B /* ImpactViewController.swift */,
-				AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */,
+				AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -507,7 +506,7 @@
 			files = (
 				BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */,
 				BFC9CD28259FBA38003A024B /* MainNavigationViewController.swift in Sources */,
-				AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */,
+				AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */,
 				BFC9CD12259FB8DB003A024B /* NavigationDataSource.swift in Sources */,
 				BFC9CD35259FDC9B003A024B /* HistoryViewController.swift in Sources */,
 				BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */,
