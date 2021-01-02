@@ -40,10 +40,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
-        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
-        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
-        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
-        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+//        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+//        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+//        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+//        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
