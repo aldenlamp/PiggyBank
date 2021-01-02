@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEE5259FDEBB00767872 /* GoalData.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
+		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
 		BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC30259F8A8300504181 /* SceneDelegate.swift */; };
 		BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC32259F8A8300504181 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		AD11CEE5259FDEBB00767872 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalData.swift; path = "PiggyBank/View Controllers/GoalData.swift"; sourceTree = SOURCE_ROOT; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA9FC2E259F8A8300504181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA9FC30259F8A8300504181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AD11CEE5259FDEBB00767872 /* GoalData.swift */,
+				BF8D8C8F259FF02A00861F63 /* GoalModel.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */,
 				BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */,
 				BFC9CD3A259FDCE0003A024B /* ImpactViewController.swift in Sources */,
+				BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

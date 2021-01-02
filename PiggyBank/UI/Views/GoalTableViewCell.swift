@@ -22,6 +22,11 @@ class GoalTableViewCell: UITableViewCell {
         createGoal()
     }
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        createGoal()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -29,7 +34,7 @@ class GoalTableViewCell: UITableViewCell {
     func createGoal() {
         piggyImage.image = UIImage(named: "piggyBank")
         
-        self.constrain(height: 100)
+//        self.constrain(height: 100)
         self.backgroundColor = UIColor.white
         
         //adding image and container to goal
@@ -62,9 +67,12 @@ class GoalTableViewCell: UITableViewCell {
         goalName.constrain(to: progressBar, heightInset: 0)
     }
     
-//    func updateData(with data: CustomDataObject) {
-//
-//    }
+    func updateData(with data: GoalData) {
+        goalName.text = "asdf"
+        progressNumberLabel.text = "1/10"
+        progressBar.text = "..."
+        piggyImage.image = UIImage(named: "piggyBank")
+    }
     
     
 }

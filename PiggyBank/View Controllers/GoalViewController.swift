@@ -9,28 +9,43 @@ import Foundation
 import UIKit
 
 class GoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-//    let goal = GoalView()
+    
+    var list = [GoalData]()
+
     let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        
+        view.backgroundColor = UIColor.white
+        
+        self.view.addSubview(tableView)
+        tableView.constrain(to: self.view, topInset: 0, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        
+        tableView.register(GoalTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         tableView.delegate = self
         tableView.dataSource = self
-        /*
-        super.viewDidLoad()
-        self.view.addSubview(goal)
-        goal.constrain(to: self.view, leadingInset: 0, trailingInset: 0, centerYInset: 0, centerXInset: 0)
-        goal.createGoal()
-        */
+        
+        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+        
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as! GoalTableViewCell
-        cell.createGoal()
+        cell.updateData(with: list[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return list.count
+
     }
 }
 
