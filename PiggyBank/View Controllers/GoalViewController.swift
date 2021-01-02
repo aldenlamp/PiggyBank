@@ -14,6 +14,8 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     let tableView = UITableView()
     let topBar = UIView()
+    let addButton = UIButton()
+    let barLine = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +24,24 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.view.addSubview(tableView)
         self.view.addSubview(topBar)
-        topBar.backgroundColor = UIColor.blue
-        topBar.constrain(height: 75)
-        topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
-        tableView.constrain(against: topBar, topInset: 0)
-        tableView.constrain(to: self.view, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        self.view.addSubview(barLine)
+        barLine.backgroundColor = UIColor.black
+
+        topBar.constrain(height: 100)
+        barLine.constrain(height: 1)
         
+        topBar.addSubview(addButton)
+        addButton.constrain(width: 50, height: 50)
+        addButton.constrain(to: topBar, bottomInset: 0, trailingInset: 0)
+        addButton.setTitle("+", for: .normal)
+        addButton.titleLabel?.font =  UIFont(name: "Arial", size: 50)
+        addButton.setTitleColor(UIColor.black, for: .normal)
+        
+        topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
+        barLine.constrain(to: self.view, leadingInset: 0, trailingInset: 0)
+        barLine.constrain(against: topBar, topInset: 0)
+        tableView.constrain(against: barLine, topInset: 0)
+        tableView.constrain(to: self.view, bottomInset: 0, leadingInset: 0, trailingInset: 0)
         
         tableView.register(GoalTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         tableView.delegate = self
@@ -41,7 +55,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return Appearance.TABLE_CELL_HEIGHT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell

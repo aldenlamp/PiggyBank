@@ -21,6 +21,7 @@ class Appearance {
         case pink
     }
     
+    static let TABLE_CELL_HEIGHT: CGFloat = 150
     static let SIDEBAR_WIDTH: CGFloat = 240
     static let OVERLAY_FULL_OPACITY : CGFloat = 0.5
     static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
