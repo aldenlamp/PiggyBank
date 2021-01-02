@@ -32,18 +32,24 @@ class HistoryTableViewCell: UITableViewCell {
         
         // adding image, date and goal
         self.addSubview(coinImage)
-        coinImage.constrain(width: 100)
+        coinImage.constrain(width: Appearance.TABLE_CELL_HEIGHT)
         coinImage.constrain(to: self, topInset: 0, bottomInset: 0, leadingInset: 0)
-        self.addSubview(date)
-        date.constrain(against: goalName, bottomInset: 0)
-        date.constrain(to: goalName, heightInset: 0)
-        date.constrain(to: self, topInset: 0, trailingInset: 0)
-        date.constrain(against: coinImage, leadingInset: 0)
         
         // adding goal name
         self.addSubview(goalName)
-        goalName.constrain(against: date, topInset: 0)
+        
         goalName.constrain(to: self, bottomInset: 0, trailingInset: 0)
+        
+        
+        // adding date
+        self.addSubview(date)
+        
+        date.constrain(to: goalName, heightInset: 0)
+        date.constrain(to: self, topInset: 0, trailingInset: 0)
+        date.constrain(against: coinImage, leadingInset: 0)
+        date.constrain(against: goalName, bottomInset: 0)
+        
+        goalName.constrain(against: date, topInset: 0)
         goalName.constrain(to: date, heightInset: 0)
         
         // adding labels to date and goal
