@@ -11,6 +11,7 @@ import UIKit
 
 class Appearance {
     
+
     enum PigColors: String, CaseIterable {
         case pink = "pink"
         case red = "red"
