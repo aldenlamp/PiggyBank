@@ -17,11 +17,6 @@ class GoalTableViewCell: UITableViewCell {
     let progressNumberLabel = UILabel()
     let progressBar = UILabel()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        createGoal()
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         createGoal()
@@ -32,7 +27,7 @@ class GoalTableViewCell: UITableViewCell {
     }
     
     func createGoal() {
-        piggyImage.image = UIImage(named: "piggyBank")
+        piggyImage.image = UIImage(named: "piggyBank") 
         
         self.backgroundColor = UIColor.white
         
@@ -58,9 +53,10 @@ class GoalTableViewCell: UITableViewCell {
         //text settings
         goalName.textAlignment = .center
         progressNumberLabel.textAlignment = .center
-        goalName.
+        //goalName.sizeToFit()
+        goalName.font = goalName.font.withSize(30)
         goalName.adjustsFontSizeToFitWidth = true
-        goalName.minimumScaleFactor = 0.5
+        goalName.minimumScaleFactor = 0.25
 
         goalName.constrain(to: progressNumberLabel, widthInset: 0)
         goalName.constrain(to: progressNumberLabel, heightInset: 0)
