@@ -13,6 +13,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     var list = [GoalData]()
 
     let tableView = UITableView()
+    let topBar = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,13 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.backgroundColor = UIColor.white
         
         self.view.addSubview(tableView)
-        tableView.constrain(to: self.view, topInset: 0, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        self.view.addSubview(topBar)
+        topBar.backgroundColor = UIColor.blue
+        topBar.constrain(height: 75)
+        topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
+        tableView.constrain(against: topBar, topInset: 0)
+        tableView.constrain(to: self.view, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        
         
         tableView.register(GoalTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         tableView.delegate = self

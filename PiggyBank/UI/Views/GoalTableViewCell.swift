@@ -11,7 +11,7 @@ import UIKit
 class GoalTableViewCell: UITableViewCell {
     
     // variables
-    var piggyImage = UIImageView()
+    let piggyImage = UIImageView()
     let container = UIView()
     let goalName = UILabel()
     let progressNumberLabel = UILabel()
