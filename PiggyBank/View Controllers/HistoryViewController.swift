@@ -8,15 +8,59 @@
 import Foundation
 import UIKit
 
-class HistoryViewController: UIViewController {
-    var cell = HistoryTableViewCell()
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    var list = [HistoryData]()
+    
+    let tableView = UITableView()
+    let topBar = UIView()
+    let barLine = UIView()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        self.view.addSubview(cell)
-        cell.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
-        cell.createHistoryCell()
+        
+        view.backgroundColor = UIColor.white
+        
+        self.view.addSubview(tableView)
+        self.view.addSubview(topBar)
+        self.view.addSubview(barLine)
+        barLine.backgroundColor = UIColor.black
+        
+        topBar.constrain(height: 100)
+        barLine.constrain(height: 1)
+        
+        topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
+        barLine.constrain(to: self.view, leadingInset: 0, trailingInset: 0)
+        barLine.constrain(against: topBar, topInset: 0)
+        tableView.constrain(against: barLine, topInset: 0)
+        tableView.constrain(to: self.view, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        
+        tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
+        list.append(HistoryData(coinValue: 5, dayDate: "Wed, 12/20", time: "11:30", goal: "Biology"))
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Appearance.TABLE_CELL_HEIGHT
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as! HistoryTableViewCell
+        cell.updateData(with: list[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+}
     
     
     
@@ -65,5 +109,6 @@ class HistoryViewController: UIViewController {
         return list.count
 
     }
- */
+ 
 }
+ */

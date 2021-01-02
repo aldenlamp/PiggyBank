@@ -18,7 +18,8 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     let piggyImage = UIImageView()
     let container = UIView()
     let goalTextField = UITextField()
-    weak var delegate: AddGoalVCDelegate?
+    
+    weak var delegate: AddGoalVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,8 +86,10 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         piggyImage.constrain(width: 200, height: 200)
         piggyImage.image = UIImage(named: "pinkPig")
     }
+    
     @objc func addGoal() {
-        delegate!.getNewGoalData()
+        delegate.getNewGoalData(name: nameTextField.text!, color: Appearance.PigColors(rawValue: color)!, goal: Int(goalTextField.text!)!, progress: 0)
+        
         self.dismiss(animated: true, completion: nil)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -135,5 +138,5 @@ extension UIViewController {
     }
 }
 protocol AddGoalVCDelegate: class {
-    func getNewGoalData()
+    func getNewGoalData(name: String, color: Appearance.PigColors, goal: Int, progress: Int)
 }

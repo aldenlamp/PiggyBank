@@ -10,7 +10,7 @@ import UIKit
 
 class GoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddGoalVCDelegate {
     
-    var list = [GoalData]()
+//    var list = [GoalData]()
     var addGoalVC = AddGoalViewController()
 
     let tableView = UITableView()
@@ -54,6 +54,12 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
     
         addGoalVC.delegate = self
+        
+        NotificationCenter.default.addObserver(forName: NotificationNames.goalDataLoaded.notification, object: nil, queue: nil, using: reloadData(notification:))
+    }
+    
+    @objc func reloadData(notification: Notification? = nil) {
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,40 +69,45 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier") as! GoalTableViewCell
-        cell.updateData(with: list[indexPath.row])
+        cell.updateData(with: DataManager.shared.goalData[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return DataManager.shared.goalData.count
     }
     @objc func switchToAdd() {
         present(addGoalVC, animated: true, completion: nil)
     }
-    func getNewGoalData() {
-        let actualColor: Appearance.PigColors
-        let name = addGoalVC.nameTextField.text!
-        let progress = 0
-        let goal = Int(addGoalVC.goalTextField.text!)!
-        switch addGoalVC.color {
-        case "pink":
-            actualColor = .pink
-        case "red":
-            actualColor = .red
-        case "orange":
-            actualColor = .orange
-        case "yellow":
-            actualColor = .yellow
-        case "green":
-            actualColor = .green
-        case "blue":
-            actualColor = .blue
-        case "purple":
-            actualColor = .purple
-        default:
-            actualColor = .pink
-        }
-//        list.append(GoalData(color: actualColor, name: name, progress: progress, goal: goal))
-        addGoalVC = AddGoalViewController()
+    
+    func getNewGoalData(name: String, color: Appearance.PigColors, goal: Int, progress: Int) {
+        DataManager.shared.addGoalData(name: name, progress: progress, goal: goal, color: color)
     }
+    
+//    func getNewGoalData() {
+//        let actualColor: Appearance.PigColors
+//        let name = addGoalVC.nameTextField.text!
+//        let progress = 0
+//        let goal = Int(addGoalVC.goalTextField.text!)!
+//        switch addGoalVC.color {
+//        case "pink":
+//            actualColor = .pink
+//        case "red":
+//            actualColor = .red
+//        case "orange":
+//            actualColor = .orange
+//        case "yellow":
+//            actualColor = .yellow
+//        case "green":
+//            actualColor = .green
+//        case "blue":
+//            actualColor = .blue
+//        case "purple":
+//            actualColor = .purple
+//        default:
+//            actualColor = .pink
+//        }
+//        list.append(GoalData(color: actualColor, name: name, progress: progress, goal: goal))
+//        addGoalVC = AddGoalViewController()
+//    }
 }
 
