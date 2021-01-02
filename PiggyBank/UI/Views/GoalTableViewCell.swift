@@ -34,12 +34,11 @@ class GoalTableViewCell: UITableViewCell {
     func createGoal() {
         piggyImage.image = UIImage(named: "piggyBank")
         
-//        self.constrain(height: 100)
         self.backgroundColor = UIColor.white
         
         //adding image and container to goal
         self.addSubview(piggyImage)
-        piggyImage.constrain(width: 100)
+        piggyImage.constrain(width: Appearance.TABLE_CELL_HEIGHT)
         piggyImage.constrain(to: self, topInset: 0, bottomInset: 0, leadingInset: 0, centerYInset: 0)
         self.addSubview(container)
         container.constrain(to: self, topInset: 0, bottomInset: 0, trailingInset: 0, centerYInset: 0)
@@ -47,10 +46,8 @@ class GoalTableViewCell: UITableViewCell {
         
         //adding labels to container
         container.addSubview(goalName)
-        goalName.text = "Biology"
         goalName.constrain(to: container, topInset: 0, leadingInset: 0)
         container.addSubview(progressNumberLabel)
-        progressNumberLabel.text = "5/10"
         progressNumberLabel.constrain(to: container, topInset: 0, trailingInset: 0)
         container.addSubview(progressBar)
         progressBar.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0);
@@ -58,19 +55,22 @@ class GoalTableViewCell: UITableViewCell {
         progressBar.constrain(against: goalName, topInset: 0)
         goalName.constrain(against: progressNumberLabel, trailingInset: 0)
         
+        //text settings
         goalName.textAlignment = .center
         progressNumberLabel.textAlignment = .center
-        
-        //constraining widths and heights
+        goalName.
+        goalName.adjustsFontSizeToFitWidth = true
+        goalName.minimumScaleFactor = 0.5
+
         goalName.constrain(to: progressNumberLabel, widthInset: 0)
         goalName.constrain(to: progressNumberLabel, heightInset: 0)
         goalName.constrain(to: progressBar, heightInset: 0)
     }
     
     func updateData(with data: GoalData) {
-        goalName.text = "asdf"
-        progressNumberLabel.text = "1/10"
-        progressBar.text = "..."
+        goalName.text = data.name
+        progressNumberLabel.text = "\(data.progress)/\(data.goal)"
+        //progressBar.text = data.progress
         piggyImage.image = UIImage(named: "piggyBank")
     }
     
