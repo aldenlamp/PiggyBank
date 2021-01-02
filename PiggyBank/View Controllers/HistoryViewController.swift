@@ -8,13 +8,16 @@
 import Foundation
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController {
     var cell = HistoryTableViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(cell)
+        cell.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
         cell.createHistoryCell()
     }
+    
     
     
     /*
