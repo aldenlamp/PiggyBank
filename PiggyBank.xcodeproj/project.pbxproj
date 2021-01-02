@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1DC341A8EC33DFD67C13C1 /* Pods_PiggyBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */; };
+		798DAD15EB30547E7EE90E63 /* Pods_PiggyBankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F821897E7847AF1E0285F013 /* Pods_PiggyBankTests.framework */; };
+		8AE4048AC35DF62F3853867C /* Pods_PiggyBank_PiggyBankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C55842F5B19087665100E0 /* Pods_PiggyBank_PiggyBankUITests.framework */; };
 		AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEE5259FDEBB00767872 /* GoalData.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
+		BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
 		BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC30259F8A8300504181 /* SceneDelegate.swift */; };
 		BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC32259F8A8300504181 /* ViewController.swift */; };
@@ -46,9 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22C39DE6EF252E6873DE1426 /* Pods-PiggyBank-PiggyBankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank-PiggyBankUITests.debug.xcconfig"; path = "Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4BF3A7FF184338B78DC0A428 /* Pods-PiggyBankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBankTests.release.xcconfig"; path = "Target Support Files/Pods-PiggyBankTests/Pods-PiggyBankTests.release.xcconfig"; sourceTree = "<group>"; };
+		4DC9071B366D03EA4C58B6B9 /* Pods-PiggyBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank.debug.xcconfig"; path = "Target Support Files/Pods-PiggyBank/Pods-PiggyBank.debug.xcconfig"; sourceTree = "<group>"; };
+		52C55842F5B19087665100E0 /* Pods_PiggyBank_PiggyBankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank_PiggyBankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBankTests.debug.xcconfig"; path = "Target Support Files/Pods-PiggyBankTests/Pods-PiggyBankTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9ED8232F67E07E1FA9A50704 /* Pods-PiggyBank-PiggyBankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank-PiggyBankUITests.release.xcconfig"; path = "Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AD11CEE5259FDEBB00767872 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalData.swift; path = "PiggyBank/View Controllers/GoalData.swift"; sourceTree = SOURCE_ROOT; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
+		BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA9FC2E259F8A8300504181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFA9FC30259F8A8300504181 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +83,8 @@
 		BFC9CD2C259FD6CB003A024B /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		BFC9CD34259FDC9B003A024B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BFC9CD39259FDCE0003A024B /* ImpactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpactViewController.swift; sourceTree = "<group>"; };
+		DB2ADC0C78787ED79D543C76 /* Pods-PiggyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank.release.xcconfig"; path = "Target Support Files/Pods-PiggyBank/Pods-PiggyBank.release.xcconfig"; sourceTree = "<group>"; };
+		F821897E7847AF1E0285F013 /* Pods_PiggyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1DC341A8EC33DFD67C13C1 /* Pods_PiggyBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798DAD15EB30547E7EE90E63 /* Pods_PiggyBankTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +108,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE4048AC35DF62F3853867C /* Pods_PiggyBank_PiggyBankUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CACD30257C05F85B0E8AA29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DC9071B366D03EA4C58B6B9 /* Pods-PiggyBank.debug.xcconfig */,
+				DB2ADC0C78787ED79D543C76 /* Pods-PiggyBank.release.xcconfig */,
+				22C39DE6EF252E6873DE1426 /* Pods-PiggyBank-PiggyBankUITests.debug.xcconfig */,
+				9ED8232F67E07E1FA9A50704 /* Pods-PiggyBank-PiggyBankUITests.release.xcconfig */,
+				8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */,
+				4BF3A7FF184338B78DC0A428 /* Pods-PiggyBankTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BFA9FC22259F8A8300504181 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +136,8 @@
 				BFA9FC44259F8A8600504181 /* PiggyBankTests */,
 				BFA9FC4F259F8A8600504181 /* PiggyBankUITests */,
 				BFA9FC2C259F8A8300504181 /* Products */,
+				8CACD30257C05F85B0E8AA29 /* Pods */,
+				D659EAA26FC79B6CB2735937 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +165,7 @@
 				BFA9FC37259F8A8600504181 /* Assets.xcassets */,
 				BFA9FC39259F8A8600504181 /* LaunchScreen.storyboard */,
 				BFA9FC3C259F8A8600504181 /* Info.plist */,
+				BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */,
 			);
 			path = PiggyBank;
 			sourceTree = "<group>";
@@ -217,6 +251,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		D659EAA26FC79B6CB2735937 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */,
+				52C55842F5B19087665100E0 /* Pods_PiggyBank_PiggyBankUITests.framework */,
+				F821897E7847AF1E0285F013 /* Pods_PiggyBankTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFA9FC55259F8A8600504181 /* Build configuration list for PBXNativeTarget "PiggyBank" */;
 			buildPhases = (
+				A114591761A33CF44ECB4DB2 /* [CP] Check Pods Manifest.lock */,
 				BFA9FC27259F8A8300504181 /* Sources */,
 				BFA9FC28259F8A8300504181 /* Frameworks */,
 				BFA9FC29259F8A8300504181 /* Resources */,
+				A1970E04C01DCE5CB1D3BB20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFA9FC58259F8A8600504181 /* Build configuration list for PBXNativeTarget "PiggyBankTests" */;
 			buildPhases = (
+				456A6E81E8FB5C97F52AA046 /* [CP] Check Pods Manifest.lock */,
 				BFA9FC3D259F8A8600504181 /* Sources */,
 				BFA9FC3E259F8A8600504181 /* Frameworks */,
 				BFA9FC3F259F8A8600504181 /* Resources */,
@@ -259,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFA9FC5B259F8A8600504181 /* Build configuration list for PBXNativeTarget "PiggyBankUITests" */;
 			buildPhases = (
+				3AD8BC7EF51B506B810FB1D4 /* [CP] Check Pods Manifest.lock */,
 				BFA9FC48259F8A8600504181 /* Sources */,
 				BFA9FC49259F8A8600504181 /* Frameworks */,
 				BFA9FC4A259F8A8600504181 /* Resources */,
+				E190E5048BF59DF66DCA85FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,6 +371,7 @@
 			files = (
 				BFA9FC3B259F8A8600504181 /* LaunchScreen.storyboard in Resources */,
 				BFA9FC38259F8A8600504181 /* Assets.xcassets in Resources */,
+				BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +390,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AD8BC7EF51B506B810FB1D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PiggyBank-PiggyBankUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		456A6E81E8FB5C97F52AA046 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PiggyBankTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A114591761A33CF44ECB4DB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PiggyBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1970E04C01DCE5CB1D3BB20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PiggyBank/Pods-PiggyBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PiggyBank/Pods-PiggyBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PiggyBank/Pods-PiggyBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E190E5048BF59DF66DCA85FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PiggyBank-PiggyBankUITests/Pods-PiggyBank-PiggyBankUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BFA9FC27259F8A8300504181 /* Sources */ = {
@@ -525,6 +678,7 @@
 		};
 		BFA9FC56259F8A8600504181 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DC9071B366D03EA4C58B6B9 /* Pods-PiggyBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -543,6 +697,7 @@
 		};
 		BFA9FC57259F8A8600504181 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB2ADC0C78787ED79D543C76 /* Pods-PiggyBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -561,6 +716,7 @@
 		};
 		BFA9FC59259F8A8600504181 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -582,6 +738,7 @@
 		};
 		BFA9FC5A259F8A8600504181 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BF3A7FF184338B78DC0A428 /* Pods-PiggyBankTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -603,6 +760,7 @@
 		};
 		BFA9FC5C259F8A8600504181 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22C39DE6EF252E6873DE1426 /* Pods-PiggyBank-PiggyBankUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -622,6 +780,7 @@
 		};
 		BFA9FC5D259F8A8600504181 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ED8232F67E07E1FA9A50704 /* Pods-PiggyBank-PiggyBankUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
