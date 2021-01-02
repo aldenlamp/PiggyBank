@@ -32,6 +32,7 @@
 		BFC9CD2D259FD6CB003A024B /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD2C259FD6CB003A024B /* Appearance.swift */; };
 		BFC9CD35259FDC9B003A024B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD34259FDC9B003A024B /* HistoryViewController.swift */; };
 		BFC9CD3A259FDCE0003A024B /* ImpactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CD39259FDCE0003A024B /* ImpactViewController.swift */; };
+		D7ED7BF725A037950091C2F3 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ED7BF625A037950091C2F3 /* HistoryData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		BFC9CD2C259FD6CB003A024B /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		BFC9CD34259FDC9B003A024B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		BFC9CD39259FDCE0003A024B /* ImpactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpactViewController.swift; sourceTree = "<group>"; };
+		D7ED7BF625A037950091C2F3 /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
 		DB2ADC0C78787ED79D543C76 /* Pods-PiggyBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PiggyBank.release.xcconfig"; path = "Target Support Files/Pods-PiggyBank/Pods-PiggyBank.release.xcconfig"; sourceTree = "<group>"; };
 		F821897E7847AF1E0285F013 /* Pods_PiggyBankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 			children = (
 				AD11CEE5259FDEBB00767872 /* GoalData.swift */,
 				BF8D8C8F259FF02A00861F63 /* GoalModel.swift */,
+				D7ED7BF625A037950091C2F3 /* HistoryData.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */,
 				BFA9FC75259F931000504181 /* GoalTableViewCell.swift in Sources */,
 				BFC9CD2D259FD6CB003A024B /* Appearance.swift in Sources */,
+				D7ED7BF725A037950091C2F3 /* HistoryData.swift in Sources */,
 				AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */,
 				AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */,
 				AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */,

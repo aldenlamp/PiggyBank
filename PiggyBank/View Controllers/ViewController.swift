@@ -25,7 +25,7 @@ class ViewController: UIViewController, GADRewardedAdDelegate {
         testButton.titleLabel?.textAlignment = .center
         self.view.addSubview(testButton)
         
-        testButton.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerYInset: 0, centerXInset: 0)
+        testButton.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerYInset: 0)
         testButton.constrain(height: 30)
         testButton.addTarget(self, action: #selector(launchAdd), for: .touchUpInside)
         

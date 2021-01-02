@@ -8,8 +8,19 @@
 import Foundation
 import UIKit
 
-class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HistoryViewController: UIViewController {
+    var cell = HistoryTableViewCell()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(cell)
+        cell.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
+        cell.createHistoryCell()
+    }
+    
+    
+    
+    /*
     var list = [GoalData]()
 
     let tableView = UITableView()
@@ -41,7 +52,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return Appearance.TABLE_CELL_HEIGHT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -54,4 +65,5 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return list.count
 
     }
+ */
 }
