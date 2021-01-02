@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */; };
 		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
+		BF14972F25A03308009D5610 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14972E25A03308009D5610 /* DataManager.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF14972E25A03308009D5610 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
 		BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,7 +131,6 @@
 				8565F31FF56DE13225166887 /* Pods-PiggyBankTests.debug.xcconfig */,
 				4BF3A7FF184338B78DC0A428 /* Pods-PiggyBankTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -226,6 +227,7 @@
 			children = (
 				AD11CEE5259FDEBB00767872 /* GoalData.swift */,
 				BF8D8C8F259FF02A00861F63 /* GoalModel.swift */,
+				BF14972E25A03308009D5610 /* DataManager.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -521,6 +523,7 @@
 				BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */,
 				BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */,
 				BFC9CD3A259FDCE0003A024B /* ImpactViewController.swift in Sources */,
+				BF14972F25A03308009D5610 /* DataManager.swift in Sources */,
 				BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
