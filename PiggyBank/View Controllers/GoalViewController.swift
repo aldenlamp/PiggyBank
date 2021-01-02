@@ -49,10 +49,10 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
-        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
-        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
-        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
+//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
         
     }
     
