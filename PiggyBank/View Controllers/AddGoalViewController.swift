@@ -69,7 +69,7 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.view.addSubview(addButton)
         addButton.setTitle("Add Goal", for: .normal)
         addButton.constrain(width: 150, height: 40)
-        addButton.constrain(against: colorPicker, topInset: 20)
+        addButton.constrain(against: colorPicker, topInset: 10)
         addButton.constrain(to: self.view, centerXInset: 0)
         addButton.setTitleColor(UIColor.black, for: .normal)
         addButton.layer.borderWidth = 2
@@ -78,6 +78,12 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         addButton.addTarget(self, action: #selector(addGoal), for: .touchUpInside)
         
         dismissKey()
+        
+        self.view.addSubview(piggyImage)
+        piggyImage.constrain(to: self.view, centerXInset: 0)
+        piggyImage.constrain(against: colorPicker, bottomInset: 0)
+        piggyImage.constrain(width: 200, height: 200)
+        piggyImage.image = UIImage(named: "pinkPig")
     }
     @objc func addGoal() {
         delegate!.getNewGoalData()
@@ -97,7 +103,24 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         color = colors[row]
-        
+        switch color {
+        case "pink":
+            piggyImage.image = UIImage(named: "pinkPig")
+        case "red":
+            piggyImage.image = UIImage(named: "redPig")
+        case "orange":
+            piggyImage.image = UIImage(named: "orangePig")
+        case "yellow":
+            piggyImage.image = UIImage(named: "yellowPig")
+        case "green":
+            piggyImage.image = UIImage(named: "greenPig")
+        case "blue":
+            piggyImage.image = UIImage(named: "bluePig")
+        case "purple":
+            piggyImage.image = UIImage(named: "purplePig")
+        default:
+            piggyImage.image = UIImage(named: "pinkPig")
+        }
     }
     
 }
