@@ -25,7 +25,7 @@ class HistoryTableViewCell: UITableViewCell {
     }
     func createHistoryCell() {
         // instead of piggyBank should be coinImage
-        coinImage.image = UIImage(named: "piggyBank")
+        coinImage.image = UIImage(named: "coin")
         
         // self.constrain(height: 100)
         self.backgroundColor = UIColor.white
@@ -57,7 +57,9 @@ class HistoryTableViewCell: UITableViewCell {
         date.textAlignment = .center
         goalName.text = "Biology"
         goalName.textAlignment = .center
-        
+    }
     
+    func updateData(with data: HistoryData) {
+        
     }
 }
