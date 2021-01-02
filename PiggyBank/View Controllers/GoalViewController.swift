@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class GoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GoalViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddGoalVCDelegate {
     
     var list = [GoalData]()
-    let addGoalVC = AddGoalViewController()
+    var addGoalVC = AddGoalViewController()
 
     let tableView = UITableView()
     let topBar = UIView()
@@ -48,6 +48,8 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.register(GoalTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        addGoalVC.delegate = self
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,10 +64,35 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
-
     }
     @objc func switchToAdd() {
         present(addGoalVC, animated: true, completion: nil)
+    }
+    func getNewGoalData() {
+        let actualColor: Appearance.PigColors
+        let name = addGoalVC.nameTextField.text!
+        let progress = 0
+        let goal = Int(addGoalVC.goalTextField.text!)!
+        switch addGoalVC.color {
+        case "pink":
+            actualColor = .pink
+        case "red":
+            actualColor = .red
+        case "orange":
+            actualColor = .orange
+        case "yellow":
+            actualColor = .yellow
+        case "green":
+            actualColor = .green
+        case "blue":
+            actualColor = .blue
+        case "purple":
+            actualColor = .purple
+        default:
+            actualColor = .pink
+        }
+        list.append(GoalData(color: actualColor, name: name, progress: progress, goal: goal))
+        addGoalVC = AddGoalViewController()
     }
 }
 
