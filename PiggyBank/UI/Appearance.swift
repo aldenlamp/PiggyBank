@@ -27,4 +27,8 @@ class Appearance {
     static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
     static let SIDEBAR_ANIMATION_DURATION = 0.3
     
+    enum Font {
+        static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
+    }
+    
 }

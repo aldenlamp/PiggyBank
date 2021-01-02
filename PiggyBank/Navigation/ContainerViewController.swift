@@ -37,6 +37,8 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         
+        print(DataManager.shared.getId())
+        
         activeNavigationController = MainNavigationController()
         
         self.view.addSubview(activeNavigationController.view)
