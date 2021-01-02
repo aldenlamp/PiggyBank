@@ -33,8 +33,8 @@ class GoalTableViewCell: UITableViewCell {
         
         //adding image and container to goal
         self.addSubview(piggyImage)
-        piggyImage.constrain(width: Appearance.TABLE_CELL_HEIGHT)
-        piggyImage.constrain(to: self, topInset: 0, bottomInset: 0, leadingInset: 0, centerYInset: 0)
+        piggyImage.constrain(width: 85, height: 85)
+        piggyImage.constrain(to: self, leadingInset: 20, centerYInset: 0)
         self.addSubview(container)
         container.constrain(to: self, topInset: 0, bottomInset: 0, trailingInset: 0, centerYInset: 0)
         container.constrain(against: piggyImage, leadingInset: 0)
@@ -44,6 +44,7 @@ class GoalTableViewCell: UITableViewCell {
         goalName.constrain(to: container, topInset: 0, leadingInset: 0)
         container.addSubview(progressNumberLabel)
         progressNumberLabel.constrain(to: container, topInset: 0, trailingInset: 0)
+        progressNumberLabel.constrain(width: 90)
         container.addSubview(progressBar)
         progressBar.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0);
         
@@ -55,10 +56,10 @@ class GoalTableViewCell: UITableViewCell {
         progressNumberLabel.textAlignment = .center
         //goalName.sizeToFit()
         goalName.font = goalName.font.withSize(30)
+        progressNumberLabel.font = goalName.font.withSize(30)
         goalName.adjustsFontSizeToFitWidth = true
-        goalName.minimumScaleFactor = 0.25
+        goalName.minimumScaleFactor = 0.5
 
-        goalName.constrain(to: progressNumberLabel, widthInset: 0)
         goalName.constrain(to: progressNumberLabel, heightInset: 0)
         goalName.constrain(to: progressBar, heightInset: 0)
     }
@@ -67,7 +68,22 @@ class GoalTableViewCell: UITableViewCell {
         goalName.text = data.name
         progressNumberLabel.text = "\(data.progress)/\(data.goal)"
         //progressBar.text = data.progress
-        piggyImage.image = UIImage(named: "piggyBank")
+        switch data.color {
+        case .pink:
+            piggyImage.image = UIImage(named: "pinkPig")
+        case .red:
+            piggyImage.image = UIImage(named: "redPig")
+        case .orange:
+            piggyImage.image = UIImage(named: "orangePig")
+        case .yellow:
+            piggyImage.image = UIImage(named: "yellowPig")
+        case .green:
+            piggyImage.image = UIImage(named: "greenPig")
+        case .blue:
+            piggyImage.image = UIImage(named: "bluePig")
+        case .purple:
+            piggyImage.image = UIImage(named: "purplePig")
+        }
     }
     
     

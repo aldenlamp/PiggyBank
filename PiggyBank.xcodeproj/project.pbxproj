@@ -14,6 +14,7 @@
 		AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */; };
 		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
+		ADD78B6525A0FEC200F17639 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B6425A0FEC200F17639 /* ProgressBar.swift */; };
 		BF14972F25A03308009D5610 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14972E25A03308009D5610 /* DataManager.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */; };
@@ -64,6 +65,7 @@
 		AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		ADD78B6425A0FEC200F17639 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF14972E25A03308009D5610 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				BFA9FC74259F931000504181 /* GoalTableViewCell.swift */,
 				AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */,
+				ADD78B6425A0FEC200F17639 /* ProgressBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */,
 				BFC9CD3A259FDCE0003A024B /* ImpactViewController.swift in Sources */,
 				BF14972F25A03308009D5610 /* DataManager.swift in Sources */,
+				ADD78B6525A0FEC200F17639 /* ProgressBar.swift in Sources */,
 				BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
