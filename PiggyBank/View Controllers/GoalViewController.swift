@@ -48,10 +48,6 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.register(GoalTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
         tableView.delegate = self
         tableView.dataSource = self
-//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
-//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
-//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
-//        list.append(GoalData(color: .blue, name: "hi", progress: 1, goal: 10))
     
         addGoalVC.delegate = self
         
