@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEE5259FDEBB00767872 /* GoalData.swift */; };
+		AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */; };
+		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		AD11CEE5259FDEBB00767872 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalData.swift; path = "PiggyBank/View Controllers/GoalData.swift"; sourceTree = SOURCE_ROOT; };
+		AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
+		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +173,7 @@
 				AD42785C259FC5A500C14E46 /* GoalViewController.swift */,
 				BFC9CD34259FDC9B003A024B /* HistoryViewController.swift */,
 				BFC9CD39259FDCE0003A024B /* ImpactViewController.swift */,
+				AD11CEF0259FFA9A00767872 /* NewGoalViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA9FC74259F931000504181 /* GoalTableViewCell.swift */,
+				AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,12 +354,14 @@
 			files = (
 				BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */,
 				BFC9CD28259FBA38003A024B /* MainNavigationViewController.swift in Sources */,
+				AD11CEF1259FFA9A00767872 /* NewGoalViewController.swift in Sources */,
 				BFC9CD12259FB8DB003A024B /* NavigationDataSource.swift in Sources */,
 				BFC9CD35259FDC9B003A024B /* HistoryViewController.swift in Sources */,
 				BFA9FC62259F8C0C00504181 /* UIView+AutoLayout.swift in Sources */,
 				BFA9FC75259F931000504181 /* GoalTableViewCell.swift in Sources */,
 				BFC9CD2D259FD6CB003A024B /* Appearance.swift in Sources */,
 				AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */,
+				AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */,
 				AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */,
 				BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */,
 				BFC9CD18259FBA13003A024B /* ContainerViewController.swift in Sources */,
