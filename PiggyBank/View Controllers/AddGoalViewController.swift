@@ -12,7 +12,9 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     let colorPicker = UIPickerView()
     var colors = [String]()
-    let nameTextField = UITextField();
+    let nameTextField = UITextField()
+    let addButton = UIButton()
+    let piggyImage = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +26,32 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
         colorPicker.delegate = self as UIPickerViewDelegate
         colorPicker.dataSource = self as UIPickerViewDataSource
+        
         self.view.addSubview(colorPicker)
         colorPicker.center = self.view.center
         
         self.view.addSubview(nameTextField)
         nameTextField.delegate = self
-        nameTextField.constrain(to: self.view, topInset: 20, leadingInset: 0, trailingInset: 0)
-        nameTextField.constrain(height: 20)
+        nameTextField.constrain(height: 40)
         nameTextField.placeholder = "type goal name"
         nameTextField.borderStyle = UITextField.BorderStyle.line
+        nameTextField.textAlignment = .center
+        
+        colorPicker.constrain(to: self.view, leadingInset: 20, centerYInset: 0)
+        nameTextField.constrain(to: self.view, trailingInset: -20, centerYInset: 0)
+        colorPicker.constrain(width: 150)
+        colorPicker.constrain(against: nameTextField, trailingInset: -20)
+        
+        self.view.addSubview(addButton)
+        addButton.setTitle("Add Goal", for: .normal)
+        addButton.constrain(width: 150, height: 40)
+        addButton.constrain(against: colorPicker, topInset: 20)
+        addButton.constrain(to: self.view, centerXInset: 0)
+        addButton.setTitleColor(UIColor.black, for: .normal)
+        addButton.layer.borderWidth = 2
+        addButton.layer.borderColor = UIColor.black.cgColor
+        addButton.layer.cornerRadius = 10
+        
         dismissKey()
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -45,6 +64,13 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let row = colors[row]
         return row
     }
+    /*
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+            // use the row to get the selected row from the picker view
+            // using the row extract the value from your datasource (array[row])
+    }
+ */
 }
 extension UIViewController {
     func dismissKey() {
