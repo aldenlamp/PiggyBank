@@ -14,7 +14,7 @@ class Slider: UIView{
     let slideCircle = UIView()
     let coloredView = UIView()
     
-    var delegate: SliderDelegate?
+    weak var delegate: SliderDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -43,7 +43,7 @@ class Slider: UIView{
     }
     
     func moveSliderToBottom() {
-        slideCircle.center.y = slideBar.frame.height - 10
+        slideCircle.center.y = slideBar.frame.height - sliderPad
     }
     
     func setSliderColor(to color: UIColor) {
@@ -57,29 +57,30 @@ class Slider: UIView{
     
     
     var oldY: CGFloat = 0
+    let sliderPad: CGFloat = 0
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self)
         if gesture.state == .began {
             oldY = slideCircle.center.y
         } else if gesture.state == .changed {
-            if (oldY + translation.y) < 10{
-                slideCircle.center.y = 10
+            if (oldY + translation.y) < sliderPad{
+                slideCircle.center.y = sliderPad
                 return
-            } else if (translation.y + oldY) > (slideBar.frame.height - 10) {
-                slideCircle.center.y = slideBar.frame.height - 10
+            } else if (translation.y + oldY) > (slideBar.frame.height - sliderPad) {
+                slideCircle.center.y = slideBar.frame.height - sliderPad
                 return
             }
             slideCircle.center.y = translation.y + oldY
         } else if gesture.state == .ended {
             if (slideCircle.center.y < 0){
-                slideCircle.center.y = 10
-            } else if (slideCircle.center.y > slideBar.frame.height - 10) {
-                slideCircle.center.y = slideBar.frame.height - 10
+                slideCircle.center.y = sliderPad
+            } else if (slideCircle.center.y > slideBar.frame.height - sliderPad) {
+                slideCircle.center.y = slideBar.frame.height - sliderPad
             }
         }
         let prop = Double(slideCircle.center.y) / Double(slideBar.frame.height)
-        delegate?.getSliderPosition(proportion: prop)
+        delegate?.getSliderPosition(proportion: 1 - prop)
         
         //TODO: - FIX LATER
 //        coloredView.frame.size.height = frame.height - CGFloat(prop) * frame.height
@@ -88,6 +89,7 @@ class Slider: UIView{
         
     }
 }
+
 protocol SliderDelegate: class {
     func getSliderPosition(proportion: Double)
 }

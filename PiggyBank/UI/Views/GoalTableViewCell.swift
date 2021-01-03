@@ -27,6 +27,7 @@ class GoalTableViewCell: UITableViewCell {
     }
     
     func createGoal() {
+        self.selectionStyle = .none
         piggyImage.image = UIImage(named: "piggyBank") 
         
         self.backgroundColor = Appearance.Colors.backgroundColor
@@ -48,10 +49,11 @@ class GoalTableViewCell: UITableViewCell {
         container.addSubview(progressBar)
         
         goalName.constrain(to: container, topInset: 0, leadingInset: 0)
-        goalName.constrain(against: progressNumberLabel, trailingInset: -10)
+        goalName.constrain(against: progressNumberLabel, trailingInset: -0)
         
-        progressNumberLabel.constrain(to: container, topInset: 0, trailingInset: 0)
-        progressNumberLabel.constrain(width: 85)
+        progressNumberLabel.constrain(to: container,trailingInset: 0)
+        progressNumberLabel.constrain(to: goalName, centerYInset: 0)
+        progressNumberLabel.constrain(width: 95)
         
         progressBar.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0);
         progressBar.setForgroundColor(to: Appearance.Colors.lightBlue, withBackground: UIColor.white)
@@ -64,14 +66,18 @@ class GoalTableViewCell: UITableViewCell {
 
         progressNumberLabel.textAlignment = .center
         progressNumberLabel.textColor = .white
-        //goalName.sizeToFit()
+        
         goalName.font = Appearance.Fonts.goalFont
-        progressNumberLabel.font = Appearance.Fonts.goalFont
+        goalName.adjustsFontSizeToFitWidth = true
+        goalName.minimumScaleFactor = 0.75
+        
+//        goalName.sizeToFit()
+        progressNumberLabel.font = Appearance.Fonts.contentTitle
     }
     
     func updateData(with data: GoalData) {
         goalName.text = data.name
-        progressNumberLabel.text = "\(data.progress)/\(data.goal)"
+        progressNumberLabel.text = "\(data.progress)/\(data.goal) m"
         progressBar.setProgress(to: data.progress, outOf: data.goal)
         progressBar.roundCornerRadius()
         piggyImage.image = Appearance.getImage(for: data.color)

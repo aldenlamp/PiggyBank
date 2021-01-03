@@ -12,6 +12,10 @@ class HistoryTableViewCell: UITableViewCell {
     
     // variables
     let coinImage = UIImageView()
+    let coinTime = UILabel()
+    
+    let time = UILabel()
+    
     let date = UILabel()
     let goalName = UILabel()
     
@@ -25,56 +29,63 @@ class HistoryTableViewCell: UITableViewCell {
     }
     func createHistoryCell() {
         self.backgroundColor = Appearance.Colors.backgroundColor
-        // instead of piggyBank should be coinImage
-        coinImage.image = UIImage(named: "coin")
-        
-        // self.constrain(height: 100)
-        self.backgroundColor = UIColor.white
+        self.selectionStyle = .none
         
         // adding image, date and goal
         self.addSubview(coinImage)
         let padding: CGFloat = 15
         coinImage.constrain(to: self, topInset: padding, bottomInset: -padding, leadingInset: padding)
         coinImage.widthAnchor.constraint(equalTo: coinImage.heightAnchor).isActive = true
+        coinImage.image = UIImage(named: "coin")
         
-        // adding goal name
-        self.addSubview(goalName)
+        coinImage.addSubview(coinTime)
+        coinTime.constrain(to: coinImage, topInset: 0, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        coinTime.textAlignment = .center
+        coinTime.font = Appearance.Fonts.goalTitle
+        coinTime.textColor = UIColor.white
+        
+        
+        self.addSubview(time)
+        time.constrain(to: self, centerYInset: 0)
+        time.constrain(width: 130, height: 25)
+        time.constrain(against: coinImage, leadingInset: 10)
+        time.textColor = UIColor.white
+        time.font = Appearance.Fonts.goalTitle
+        
         self.addSubview(date)
+        self.addSubview(goalName)
         
-        goalName.constrain(to: self, bottomInset: 0, trailingInset: 0)
-        goalName.constrain(against: date, topInset: 0)
+        date.constrain(to: self, trailingInset: -40)
+        date.constrain(against: time, leadingInset: 10)
+        date.constrain(to: coinImage, topInset: 15)
         
-        date.constrain(to: goalName, heightInset: 0)
-        date.constrain(to: self, topInset: 0, trailingInset: 0)
-        date.constrain(against: coinImage, leadingInset: 0)
-        date.constrain(against: goalName, bottomInset: 0)
+        goalName.constrain(against: time, leadingInset: 10)
+        goalName.constrain(to: coinImage, bottomInset: -15)
+        goalName.heightAnchor.constraint(equalTo: date.heightAnchor).isActive = true
+        goalName.widthAnchor.constraint(equalTo: date.widthAnchor).isActive = true
         
+        date.textAlignment = .left
+        date.font = Appearance.Fonts.contentTitle
+        date.textColor = UIColor.white
         
-        
-        date.textAlignment = .center
-        goalName.textAlignment = .center
-        
-        // adding labels to date and goal
-
-        
+        goalName.textAlignment = .left
+        goalName.font = Appearance.Fonts.contentTitle
+        goalName.textColor = UIColor.white
         
     }
     
     func updateData(with data: HistoryData) {
-//        goalName.text = data.name
-        date.text = ""
-        //progressBar.text = data.progress
-        coinImage.image = UIImage(named: "coin")
-
+        coinTime.text = "\(data.length)m"
         
-//        data.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm a"
+        time.text = dateFormatter.string(from: data.date)
         
-//        date.text
+        dateFormatter.dateFormat = "E, MMM dd"
+        date.text = dateFormatter.string(from: data.date)
         
-//        goalName.text
+        goalName.text = DataManager.shared.getGoalName(of: data.goalID)
+    
         
-        
-        date.text = "Wed, 12/20, 11:30"
-        goalName.text = "Biology"
     }
 }
