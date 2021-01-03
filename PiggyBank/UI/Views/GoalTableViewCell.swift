@@ -34,11 +34,13 @@ class GoalTableViewCell: UITableViewCell {
         //adding image and container to goal
         self.addSubview(piggyImage)
         piggyImage.constrain(width: 85, height: 85)
-        piggyImage.constrain(to: self, leadingInset: 20, centerYInset: 0)
+        piggyImage.constrain(to: self, leadingInset: 15, centerYInset: 0)
+        
         self.addSubview(container)
         container.constrain(to: self, trailingInset: -20, centerYInset: 0)
         container.constrain(to: piggyImage, topInset: 0, bottomInset: 0)
-        container.constrain(against: piggyImage, leadingInset: 0)
+        container.constrain(against: piggyImage, leadingInset: 20)
+
         
         //adding labels to container
         container.addSubview(goalName)
@@ -59,6 +61,7 @@ class GoalTableViewCell: UITableViewCell {
         //text settings
         goalName.textAlignment = .left
         goalName.textColor = .white
+
         progressNumberLabel.textAlignment = .center
         progressNumberLabel.textColor = .white
         //goalName.sizeToFit()
