@@ -13,6 +13,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     let tableView = UITableView()
     let topBar = UIView()
     let historyLabel = UILabel()
+    let menuButton: UIButton = {
+        let mView = UIButton()
+        for i in 0..<3 {
+            let topBar = UIView(frame: CGRect(x: 0, y: i*9, width: 30, height: 4))
+            topBar.layer.cornerRadius = 2
+            topBar.backgroundColor = UIColor.white
+            mView.addSubview(topBar)
+        }
+        mView.constrain(width: 30, height: 22)
+        return mView
+    }()
     
     override func viewDidLoad() {
         
@@ -23,6 +34,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.view.addSubview(tableView)
         self.view.addSubview(topBar)
         topBar.addSubview(historyLabel)
+        topBar.addSubview(menuButton)
         
         topBar.constrain(height: 100)
         
@@ -37,7 +49,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historyLabel.text = "History"
         historyLabel.textAlignment = .center
         historyLabel.textColor = .white
+        historyLabel.constrain(to: topBar, bottomInset: -10, leadingInset: 0, trailingInset: 0, centerXInset: 0)
+        historyLabel.font = Appearance.Fonts.goalTitle
         
+        menuButton.constrain(to: topBar, topInset: 60, leadingInset: 30)
+        menuButton.addTarget(self, action: #selector(handleMenuPressed), for: .touchUpInside)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,5 +70,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.shared.historyData.count
     }
-    
+    @objc func handleMenuPressed() {
+        NotificationCenter.default.post(name: NotificationNames.toggleSideBar.notification, object: nil)
+    }
 }
