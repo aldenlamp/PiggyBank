@@ -30,18 +30,19 @@ class ViewController: UIViewController, SliderDelegate {
             topBar.backgroundColor = UIColor.white
             mView.addSubview(topBar)
         }
+        mView.constrain(width: 30, height: 22)
         return mView
     }()
     
     let titleLabel = UILabel()
+    let pigTimer = PigTimer()
     
-    
+//    var currentGoal = 0
     
     weak var currentGoal: GoalData?
     
     override func viewDidLoad() {
         self.view.backgroundColor = Appearance.Colors.backgroundColor
-        
         
         self.view.addSubview(menuButton)
         menuButton.constrain(to: self.view, topInset: 60, leadingInset: 30)
@@ -53,6 +54,11 @@ class ViewController: UIViewController, SliderDelegate {
         titleLabel.constrain(to: self.view, topInset: 60, leadingInset: 40, trailingInset: -40)
         titleLabel.textAlignment = .center
         titleLabel.constrain(height: 41)
+        
+        self.view.addSubview(pigTimer)
+        pigTimer.heightAnchor.constraint(equalTo: pigTimer.heightAnchor).isActive = true
+//        pigTimer.constrain(to: self.view, leadingInset: )
+        
         
         
         self.view.addSubview(slider)
