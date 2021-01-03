@@ -14,17 +14,19 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var colors = [String]()
     var color = "pink"
     let nameTextField = UITextField()
+    let goalTextField = UITextField()
+    let minuteLabel = UILabel()
     let addButton = UIButton()
     let piggyImage = UIImageView()
     let container = UIView()
-    let goalTextField = UITextField()
+    
     
     weak var delegate: AddGoalVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Appearance.Colors.backgroundColor
         var iterateColors = 0
         for color in Appearance.PigColors.allCases {
             colors.append(color.rawValue)
@@ -45,27 +47,37 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         nameTextField.constrain(height: 40)
         nameTextField.placeholder = "Goal Name"
         nameTextField.textAlignment = .center
-        nameTextField.layer.borderWidth = 2
-        nameTextField.layer.borderColor = UIColor.black.cgColor
         nameTextField.layer.cornerRadius = 10
+        nameTextField.backgroundColor = Appearance.Colors.lightBlue
+        nameTextField.textColor = .white
         nameTextField.constrain(to: container, topInset: 0, leadingInset: 0, trailingInset: 0)
         
         container.addSubview(goalTextField)
         goalTextField.keyboardType = .numberPad
         goalTextField.delegate = self;
-        goalTextField.constrain(height: 40)
+        goalTextField.constrain(width: 75, height: 40)
         goalTextField.placeholder = "Goal"
         goalTextField.textAlignment = .center
-        goalTextField.layer.borderWidth = 2
-        goalTextField.layer.borderColor = UIColor.black.cgColor
+        goalTextField.backgroundColor = Appearance.Colors.lightBlue
+        goalTextField.textColor = .white
         goalTextField.layer.cornerRadius = 10
-        goalTextField.constrain(to: nameTextField, widthInset: 0, heightInset: 0)
-        goalTextField.constrain(against: nameTextField, topInset: 0)
-        goalTextField.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        goalTextField.constrain(to: nameTextField, heightInset: 0)
+        goalTextField.constrain(against: nameTextField, topInset: 5)
+        goalTextField.constrain(to: container, bottomInset: 0, leadingInset: 0)
+        
+        container.addSubview(minuteLabel)
+        minuteLabel.text = "minutes"
+        minuteLabel.textAlignment = .center
+        minuteLabel.textColor = .white
+        minuteLabel.font = Appearance.Fonts.addGoalMinute
+        minuteLabel.constrain(to: container, bottomInset: 0, trailingInset: 0)
+        minuteLabel.constrain(against: nameTextField, topInset: 0)
+        minuteLabel.constrain(against: goalTextField, leadingInset: 0)
         
         colorPicker.constrain(to: self.view, leadingInset: 20, centerYInset: 0)
         colorPicker.constrain(width: 150)
         colorPicker.constrain(against: container, trailingInset: -20)
+        
         
         self.view.addSubview(addButton)
         addButton.setTitle("Add Goal", for: .normal)
