@@ -11,8 +11,8 @@ class ViewController: UIViewController, SliderDelegate {
     
     
     let time = UILabel()
-    let start = UIButton()
-    let empty = UIButton()
+//    let start = UIButton()
+//    let empty = UIButton()
 
     var seconds = 300
     var timer = Timer()
@@ -39,7 +39,30 @@ class ViewController: UIViewController, SliderDelegate {
     
     let progressBar = ProgressBar()
     
-//    var currentGoal = 0
+    let switchBanksButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = Appearance.Colors.darkBlue
+        button.titleLabel?.font = Appearance.Fonts.switchBanksButton
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Switch Banks", for: .normal)
+        button.constrain(width: 220, height: 46)
+        button.layer.cornerRadius = 23
+        button.addShadow()
+        return button
+    }()
+    
+    var startButton: UIButton = UIButton()
+    var emptyButton: UIButton = UIButton()
+    
+    func createCircleButton () -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = Appearance.Colors.lightBlue
+        button.constrain(width: 90, height: 90)
+        button.layer.cornerRadius = 45
+        button.titleLabel?.font = Appearance.Fonts.switchBanksButton
+        button.setTitleColor(UIColor.white, for: .normal)
+        return button
+    }
     
     weak var currentGoal: GoalData?
     
@@ -57,12 +80,14 @@ class ViewController: UIViewController, SliderDelegate {
         titleLabel.textAlignment = .center
         titleLabel.constrain(height: 41)
         titleLabel.text = "Hello World"
+        titleLabel.textColor = .white
         
         self.view.addSubview(pigTimer)
         pigTimer.heightAnchor.constraint(equalTo: pigTimer.widthAnchor).isActive = true
         pigTimer.constrain(to: self.view, leadingInset: Appearance.PIGTIME_PADDING, trailingInset: -Appearance.PIGTIME_PADDING)
         pigTimer.constrain(against: titleLabel, topInset: 5)
         pigTimer.updateTimer(with: 0)
+        pigTimer.pigColor = .pink
         
         self.view.addSubview(slider)
         slider.constrain(to: pigTimer, topInset: 0, bottomInset: 0)
@@ -72,7 +97,8 @@ class ViewController: UIViewController, SliderDelegate {
         slider.moveSliderToBottom()
         slider.delegate = self
         
-        slider.setSliderColor(to: UIColor.black)
+        slider.setSliderColor(to: Appearance.Colors.lightBlue)
+        slider.setBackgroundColor(to: UIColor.white)
         
         self.view.addSubview(progressBar)
         progressBar.constrain(to: self.view, centerXInset: 0)
@@ -81,21 +107,56 @@ class ViewController: UIViewController, SliderDelegate {
         progressBar.constrain(height: 60)
         progressBar.layoutIfNeeded()
         progressBar.roundCornerRadius()
-        progressBar.setForgroundColor(to: UIColor.blue, withBackground: UIColor.white)
+        progressBar.setForgroundColor(to: Appearance.Colors.lightBlue, withBackground: UIColor.white)
+        progressBar.layoutIfNeeded()
+        progressBar.setProgress(to: 99, outOf: 100)
         
+        self.view.addSubview(switchBanksButton)
+        switchBanksButton.constrain(to: self.view, centerXInset: 0)
+        switchBanksButton.constrain(against: progressBar, topInset: 30)
+        switchBanksButton.addTarget(self, action: #selector(handleSwitchBanks), for: .touchUpInside)
+        switchBanksButton.addClickShadow()
+        
+        startButton = createCircleButton()
+        emptyButton = createCircleButton()
+        
+        self.view.addSubview(startButton)
+        self.view.addSubview(emptyButton)
+        
+        startButton.constrain(against: switchBanksButton, topInset: 30)
+        startButton.constrain(to: self.view, leadingInset: 75)
+        startButton.addTarget(self, action: #selector(handleStart), for: .touchUpInside)
+        startButton.setTitle("Start", for: .normal)
+        startButton.addShadow()
+        startButton.addClickShadow()
+        
+        emptyButton.constrain(to: self.view, trailingInset: -75)
+        emptyButton.constrain(against: switchBanksButton, topInset: 30)
+        emptyButton.addTarget(self, action: #selector(handleEmpty), for: .touchUpInside)
+        emptyButton.setTitle("Empty", for: .normal)
+        emptyButton.addShadow()
+        emptyButton.addClickShadow()
     }
     
     @objc func handleMenuPressed() {
         NotificationCenter.default.post(name: NotificationNames.toggleSideBar.notification, object: nil)
     }
     
+    @objc func handleSwitchBanks() {
+        
+    }
     
+    @objc func handleStart() {
+        
+    }
+    
+    @objc func handleEmpty() {
+        
+    }
     
     @objc func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
     }
-    
-    
     
     @objc func updateTimer() {
         if seconds < 1 {

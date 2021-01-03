@@ -43,16 +43,23 @@ class ProgressBar: UIView {
         super.init(frame: .zero)
         
         self.addSubview(progressTitleLabel)
-        progressTitleLabel.constrain(to: self, topInset: 0, leadingInset: 5)
-        progressTitleLabelHeightOpen = progressTitleLabel.heightAnchor.constraint(equalToConstant: 20)
+        progressTitleLabel.constrain(to: self, topInset: 0, leadingInset: Appearance.PROGRESSBAR_TITLE_PADDING)
+        progressTitleLabelHeightOpen = progressTitleLabel.heightAnchor.constraint(equalToConstant: 24 )
         progressTitleLabelHeightClosed = progressTitleLabel.heightAnchor.constraint(equalToConstant: 0)
         progressTitleLabel.text = "Progress"
+        progressTitleLabel.textAlignment = .left
         progressTitleLabelHeightOpen?.isActive = true
+        progressTitleLabel.textColor = UIColor.white
+        progressTitleLabel.font = Appearance.Fonts.progressTitleFont
         
         self.addSubview(goalTitleLabel)
-        goalTitleLabel.constrain(to: self, topInset: 0, trailingInset: -5)
+        goalTitleLabel.constrain(to: self, topInset: 0, trailingInset: -Appearance.PROGRESSBAR_TITLE_PADDING)
         goalTitleLabel.constrain(against: progressTitleLabel, leadingInset: 0)
         goalTitleLabel.constrain(to: progressTitleLabel, widthInset: 0, heightInset: 0)
+        goalTitleLabel.text = "Goal"
+        goalTitleLabel.textAlignment = .right
+        goalTitleLabel.textColor = UIColor.white
+        goalTitleLabel.font = Appearance.Fonts.progressTitleFont
         
         
         self.addSubview(goalView)
@@ -90,6 +97,13 @@ class ProgressBar: UIView {
         
         progressLabel.text = "\(progress)"
         goalLabel.text = "\(goal)"
+        
+        layoutIfNeeded()
+        
+        if progressLabel.frame.contains(CGPoint(x: goalLabel.frame.minX, y: goalLabel.frame.midY)) {
+            shouldShowLabels = false
+        }
+        
     }
     
     func setForgroundColor(to color: UIColor, withBackground bColor: UIColor = UIColor.white) {
