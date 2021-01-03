@@ -28,6 +28,8 @@ class Appearance {
     static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
     static let SIDEBAR_ANIMATION_DURATION = 0.3
     
+    static let PIGTIME_PADDING: CGFloat = 75
+    
     static let TOTAL_GOAL_COLOR = PigColors.pink
     
     enum Colors {

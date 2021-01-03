@@ -39,6 +39,8 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
         
+        UIColor(hex: "#A4BBFA")
+        
         print(DataManager.shared.getId())
         DataManager.shared.getGoalData()
         DataManager.shared.getHistoryData()
