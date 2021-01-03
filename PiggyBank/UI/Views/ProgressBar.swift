@@ -92,7 +92,8 @@ class ProgressBar: UIView {
     
     func setProgress(to progress: Int, outOf goal: Int) {
         progressWidth?.isActive = false
-        progressWidth = progressView.widthAnchor.constraint(equalTo: goalView.widthAnchor, multiplier: CGFloat(progress)/CGFloat(goal))
+        
+        progressWidth = progressView.widthAnchor.constraint(equalTo: goalView.widthAnchor, multiplier: goal == 0 ? 1 : CGFloat(progress)/CGFloat(goal))    
         progressWidth?.isActive = true
         
         progressLabel.text = "\(progress)"

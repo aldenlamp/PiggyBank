@@ -13,6 +13,7 @@
 		AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEE5259FDEBB00767872 /* GoalData.swift */; };
 		AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */; };
 		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
+		AD2D7E1425A1B0DC006B579A /* SidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2D7E1325A1B0DC006B579A /* SidebarButton.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
 		ADD78B6525A0FEC200F17639 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B6425A0FEC200F17639 /* ProgressBar.swift */; };
 		ADD78B7225A140EE00F17639 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B7125A140EE00F17639 /* Slider.swift */; };
@@ -69,6 +70,7 @@
 		AD11CEE5259FDEBB00767872 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalData.swift; path = "PiggyBank/View Controllers/GoalData.swift"; sourceTree = SOURCE_ROOT; };
 		AD11CEF0259FFA9A00767872 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		AD2D7E1325A1B0DC006B579A /* SidebarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarButton.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		ADD78B6425A0FEC200F17639 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		ADD78B7125A140EE00F17639 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
@@ -179,8 +181,8 @@
 				BFC9CD10259FB813003A024B /* DataSource */,
 				BFC9CD3E259FDD19003A024B /* UI */,
 				BFA9FC69259F91FA00504181 /* Extensions */,
-				BFA9FC2E259F8A8300504181 /* AppDelegate.swift */,
 				BFA9FC30259F8A8300504181 /* SceneDelegate.swift */,
+				BFA9FC2E259F8A8300504181 /* AppDelegate.swift */,
 				BFA9FC37259F8A8600504181 /* Assets.xcassets */,
 				BFA9FC39259F8A8600504181 /* LaunchScreen.storyboard */,
 				BFA9FC3C259F8A8600504181 /* Info.plist */,
@@ -238,6 +240,7 @@
 				ADD78B6425A0FEC200F17639 /* ProgressBar.swift */,
 				ADD78B7125A140EE00F17639 /* Slider.swift */,
 				BF14974225A184D1009D5610 /* PigTimer.swift */,
+				AD2D7E1325A1B0DC006B579A /* SidebarButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */,
 				BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */,
 				BFC9CD3A259FDCE0003A024B /* ImpactViewController.swift in Sources */,
+				AD2D7E1425A1B0DC006B579A /* SidebarButton.swift in Sources */,
 				BF14972F25A03308009D5610 /* DataManager.swift in Sources */,
 				ADD78B6525A0FEC200F17639 /* ProgressBar.swift in Sources */,
 				BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */,
