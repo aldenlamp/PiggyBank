@@ -38,7 +38,7 @@ class PigTimer: UIView {
         timerLabel.constrain(to: centerView, topInset: 0, bottomInset: 0, leadingInset: 0, trailingInset: 0)
         timerLabel.textColor = UIColor.black
         timerLabel.textAlignment = .center
-        timerLabel.font = Appearance.Font.timerLabelFont
+        timerLabel.font = Appearance.Fonts.timerLabelFont
     }
     
     required init?(coder: NSCoder) {

@@ -49,7 +49,7 @@ class ViewController: UIViewController, SliderDelegate {
         menuButton.addTarget(self, action: #selector(handleMenuPressed), for: .touchUpInside)
         
         self.view.addSubview(titleLabel)
-        titleLabel.font = Appearance.Font.mainTitle
+        titleLabel.font = Appearance.Fonts.mainTitle
         titleLabel.constrain(to: self.view, topInset: 60, leadingInset: 40, trailingInset: -40)
         titleLabel.textAlignment = .center
         titleLabel.constrain(height: 41)

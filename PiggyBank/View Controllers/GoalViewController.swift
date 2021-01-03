@@ -38,7 +38,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         topLabel.text = "My Piggy Banks"
         topLabel.textColor = .white
         topLabel.constrain(to: topBar, bottomInset: -20, centerXInset: 0)
-        topLabel.font = Appearance.Font.goalTitle
+        topLabel.font = Appearance.Fonts.goalTitle
         topLabel.textAlignment = .center
         topLabel.constrain(to: topBar, leadingInset: 0, trailingInset: 0)
         topLabel.constrain(height: 35)
