@@ -12,18 +12,16 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let tableView = UITableView()
     let topBar = UIView()
-    let barLine = UIView()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = Appearance.Colors.backgroundColor
         
         self.view.addSubview(tableView)
         self.view.addSubview(topBar)
         self.view.addSubview(barLine)
-        barLine.backgroundColor = UIColor.black
         
         topBar.constrain(height: 100)
         barLine.constrain(height: 1)

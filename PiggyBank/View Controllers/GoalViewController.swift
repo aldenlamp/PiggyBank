@@ -16,7 +16,6 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     let tableView = UITableView()
     let topBar = UIView()
     let addButton = UIButton()
-    let barLine = UIView()
     let topLabel = UILabel()
     let menuButton: UIButton = {
         let mView = UIButton()
@@ -37,13 +36,10 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.view.addSubview(tableView)
         self.view.addSubview(topBar)
-        self.view.addSubview(barLine)
-        barLine.backgroundColor = UIColor.black
         tableView.backgroundColor = Appearance.Colors.backgroundColor
         topBar.backgroundColor = Appearance.Colors.lightBlue
 
         topBar.constrain(height: 100)
-        barLine.constrain(height: 1)
         
         topBar.addSubview(topLabel)
         topLabel.text = "My Piggy Banks"
