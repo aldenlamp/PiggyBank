@@ -57,10 +57,8 @@ class GoalTableViewCell: UITableViewCell {
         progressNumberLabel.textAlignment = .center
         progressNumberLabel.textColor = .white
         //goalName.sizeToFit()
-        goalName.font = goalName.font.withSize(30)
-        progressNumberLabel.font = goalName.font.withSize(30)
-        goalName.adjustsFontSizeToFitWidth = true
-        goalName.minimumScaleFactor = 0.5
+        goalName.font = Appearance.Fonts.goalFont
+        progressNumberLabel.font = Appearance.Fonts.goalFont
 
         goalName.constrain(to: progressNumberLabel, heightInset: 0)
         goalName.constrain(to: progressBar, heightInset: 0)

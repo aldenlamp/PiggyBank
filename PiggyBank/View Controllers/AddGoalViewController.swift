@@ -45,7 +45,7 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         container.addSubview(nameTextField)
         nameTextField.delegate = self
         nameTextField.constrain(height: 40)
-        nameTextField.placeholder = "Goal Name"
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "Enter Piggy Bank Name", attributes: [NSAttributedString.Key.foregroundColor: Appearance.Colors.backgroundColor])
         nameTextField.textAlignment = .center
         nameTextField.layer.cornerRadius = 10
         nameTextField.backgroundColor = Appearance.Colors.lightBlue
@@ -56,7 +56,7 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         goalTextField.keyboardType = .numberPad
         goalTextField.delegate = self;
         goalTextField.constrain(width: 75, height: 40)
-        goalTextField.placeholder = "Goal"
+        goalTextField.attributedPlaceholder = NSAttributedString(string: "Time", attributes: [NSAttributedString.Key.foregroundColor: Appearance.Colors.backgroundColor])
         goalTextField.textAlignment = .center
         goalTextField.backgroundColor = Appearance.Colors.lightBlue
         goalTextField.textColor = .white
@@ -80,13 +80,12 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         
         self.view.addSubview(addButton)
-        addButton.setTitle("Add Goal", for: .normal)
+        addButton.setTitle("Add Piggy Bank", for: .normal)
         addButton.constrain(width: 150, height: 40)
         addButton.constrain(against: colorPicker, topInset: 10)
         addButton.constrain(to: self.view, centerXInset: 0)
-        addButton.setTitleColor(UIColor.black, for: .normal)
-        addButton.layer.borderWidth = 2
-        addButton.layer.borderColor = UIColor.black.cgColor
+        addButton.setTitleColor(UIColor.white, for: .normal)
+        addButton.backgroundColor = Appearance.Colors.lightBlue
         addButton.layer.cornerRadius = 10
         addButton.addTarget(self, action: #selector(addGoal), for: .touchUpInside)
         
@@ -115,7 +114,10 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let row = colors[row]
         return row
     }
-    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let attributedString = NSAttributedString(string: colors[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        return attributedString
+    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         color = colors[row]

@@ -45,6 +45,7 @@ class Appearance {
         static let goalTitle = UIFont.systemFont(ofSize: 35, weight: .regular)
         static let timerLabelFont = UIFont.systemFont(ofSize: 25, weight: .medium)
         static let addGoalMinute = UIFont.systemFont(ofSize: 25, weight: .regular)
+        static let goalFont = UIFont.systemFont(ofSize: 30, weight: .regular)
     }
     
     static func getImage(for color: PigColors) -> UIImage {
