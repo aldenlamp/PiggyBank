@@ -101,6 +101,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getNewGoalData(name: String, color: Appearance.PigColors, goal: Int, progress: Int) {
         DataManager.shared.addGoalData(name: name, progress: progress, goal: goal, color: color)
     }
+
     
     @objc func handleMenuPressed() {
         NotificationCenter.default.post(name: NotificationNames.toggleSideBar.notification, object: nil)

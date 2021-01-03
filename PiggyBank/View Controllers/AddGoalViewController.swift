@@ -140,7 +140,12 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             piggyImage.image = UIImage(named: "pinkPig")
         }
     }
-    
+    func editGoal(for data: GoalData) {
+        nameTextField.text = data.name
+//        goalTextField.text = data.goal
+//        colorPicker.select(data.color(rawValue: String))
+        
+    }
 }
 extension UIViewController {
     func dismissKey() {
