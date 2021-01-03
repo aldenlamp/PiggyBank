@@ -26,6 +26,7 @@ class ViewController: UIViewController, SliderDelegate {
             let topBar = UIView(frame: CGRect(x: 0, y: i*9, width: 30, height: 4))
             topBar.layer.cornerRadius = 2
             topBar.backgroundColor = UIColor.white
+            topBar.isUserInteractionEnabled = false
             mView.addSubview(topBar)
         }
         mView.constrain(width: 30, height: 22)

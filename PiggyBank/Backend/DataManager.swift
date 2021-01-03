@@ -95,7 +95,9 @@ class DataManager {
             ref.child("history").child(userID).child(key).setValue(hData.getDictRepresentation())
             historyData.append(hData)
             goalData[goalIndex].progress += timeLength
-            ref.child("goals").child(userID).child(goalData[goalIndex].goalID).child("progress").setValue(goalData[goalIndex].progress)
+            if goalData[goalIndex].goalID != "total" {
+                ref.child("goals").child(userID).child(goalData[goalIndex].goalID).child("progress").setValue(goalData[goalIndex].progress)
+            }
         } else {
             print("Could not add history data")
         }

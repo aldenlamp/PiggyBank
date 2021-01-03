@@ -114,8 +114,8 @@ class ProgressBar: UIView {
     
     func roundCornerRadius() {
         self.layoutIfNeeded()
-        progressView.layer.masksToBounds = true
-        goalView.layer.masksToBounds = true
+//        progressView.layer.masksToBounds = true
+//        goalView.layer.masksToBounds = true
         progressView.layer.cornerRadius = progressView.frame.height / 2
         goalView.layer.cornerRadius = goalView.frame.height / 2
     }

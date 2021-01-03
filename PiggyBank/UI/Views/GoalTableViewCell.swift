@@ -35,21 +35,31 @@ class GoalTableViewCell: UITableViewCell {
         self.addSubview(piggyImage)
         piggyImage.constrain(width: 85, height: 85)
         piggyImage.constrain(to: self, leadingInset: 15, centerYInset: 0)
+        
         self.addSubview(container)
-        container.constrain(to: self, topInset: 0, bottomInset: 0, trailingInset: 0, centerYInset: 0)
-        container.constrain(against: piggyImage, leadingInset: 10)
+        container.constrain(to: self, trailingInset: -20, centerYInset: 0)
+        container.constrain(to: piggyImage, topInset: 0, bottomInset: 0)
+        container.constrain(against: piggyImage, leadingInset: 20)
+
         
         //adding labels to container
         container.addSubview(goalName)
-        goalName.constrain(to: container, topInset: 0, leadingInset: 0)
         container.addSubview(progressNumberLabel)
-        progressNumberLabel.constrain(to: container, topInset: 0, trailingInset: 0)
-        progressNumberLabel.constrain(width: 90)
         container.addSubview(progressBar)
-        progressBar.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0);
         
+        goalName.constrain(to: container, topInset: 0, leadingInset: 0)
+        goalName.constrain(against: progressNumberLabel, trailingInset: -10)
+        
+        progressNumberLabel.constrain(to: container, topInset: 0, trailingInset: 0)
+        progressNumberLabel.constrain(width: 85)
+        
+        progressBar.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0);
+        progressBar.setForgroundColor(to: Appearance.Colors.lightBlue, withBackground: UIColor.white)
+        progressBar.shouldShowTitle = false
+        progressBar.shouldShowLabels = false
+
         //text settings
-        goalName.textAlignment = .center
+        goalName.textAlignment = .left
         goalName.textColor = .white
 
         progressNumberLabel.textAlignment = .center
@@ -63,6 +73,7 @@ class GoalTableViewCell: UITableViewCell {
         goalName.text = data.name
         progressNumberLabel.text = "\(data.progress)/\(data.goal)"
         progressBar.setProgress(to: data.progress, outOf: data.goal)
+        progressBar.roundCornerRadius()
         piggyImage.image = Appearance.getImage(for: data.color)
     }
 }
