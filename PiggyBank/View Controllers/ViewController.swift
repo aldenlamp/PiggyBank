@@ -67,6 +67,7 @@ class ViewController: UIViewController, SliderDelegate {
         start.setTitleColor(UIColor.black, for: .normal)
         start.addTarget(self, action: #selector(startTimer), for: .touchUpInside)
         */
+        
         /*
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(top)
