@@ -40,7 +40,7 @@ class Appearance {
     enum Fonts {
         static let mainTitle = UIFont.systemFont(ofSize: 40, weight: .bold)
         static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
-        static let goalTitle = UIFont.systemFont(ofSize: 40, weight: .regular)
+        static let goalTitle = UIFont.systemFont(ofSize: 35, weight: .regular)
         static let timerLabelFont = UIFont.systemFont(ofSize: 25, weight: .medium)
     }
     

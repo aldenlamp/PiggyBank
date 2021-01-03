@@ -29,7 +29,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.addSubview(barLine)
         barLine.backgroundColor = UIColor.black
         tableView.backgroundColor = Appearance.Colors.backgroundColor
-        topBar.backgroundColor = Appearance.Colors.backgroundColor
+        topBar.backgroundColor = Appearance.Colors.lightBlue
 
         topBar.constrain(height: 100)
         barLine.constrain(height: 1)
@@ -37,11 +37,11 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         topBar.addSubview(topLabel)
         topLabel.text = "My Piggy Banks"
         topLabel.textColor = .white
-        topLabel.constrain(to: topBar, bottomInset: -20, centerXInset: 0)
+        topLabel.constrain(to: topBar, bottomInset: -10, centerXInset: 0)
         topLabel.font = Appearance.Fonts.goalTitle
         topLabel.textAlignment = .center
         topLabel.constrain(to: topBar, leadingInset: 0, trailingInset: 0)
-        topLabel.constrain(height: 35)
+        topLabel.constrain(height: 45)
         
         topBar.addSubview(addButton)
         addButton.constrain(width: 50, height: 50)
