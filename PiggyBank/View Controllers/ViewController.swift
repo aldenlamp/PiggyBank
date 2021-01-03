@@ -26,19 +26,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.white
-        self.view.addSubview(time)
-        time.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
-        time.constrain(width: 200, height: 100)
-        time.text = "hello"
-        time.textAlignment = .center
         
-        self.view.addSubview(start)
-        start.constrain(to: self.view, centerXInset: 0)
-        start.constrain(against: time, topInset: 0)
-        start.constrain(width: 100, height: 30)
-        start.setTitle("start", for: .normal)
-        start.setTitleColor(UIColor.black, for: .normal)
-        start.addTarget(self, action: #selector(startTimer), for: .touchUpInside)
+        
+        let test = ProgressBar()
+        
+        self.view.addSubview(test)
+        test.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerYInset: 0, centerXInset: 0)
+        test.constrain(height: 50)
+        test.setProgress(to: 10, outOf: 100)
+        test.setForgroundColor(to: UIColor.green, withBackground: UIColor.blue )
+        
+        let test2 = ProgressBar()
+        self.view.addSubview(test2)
+        test2.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerXInset: 0)
+        test2.constrain(against: test, topInset: 40)
+        test2.constrain(height: 100)
+        test2.setProgress(to: 70, outOf: 100)
+        test2.setForgroundColor(to: UIColor.green, withBackground: UIColor.blue)
+   
+        test2.roundCornerRadius()
+        
+        print("\n\n\(test2.goalView.frame.height)\n\n")
+        
+        
+//        self.view.addSubview(time)
+//        time.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
+//        time.constrain(width: 200, height: 100)
+//        time.text = "hello"
+//        time.textAlignment = .center
+//
+//        self.view.addSubview(start)
+//        start.constrain(to: self.view, centerXInset: 0)
+//        start.constrain(against: time, topInset: 0)
+//        start.constrain(width: 100, height: 30)
+//        start.setTitle("start", for: .normal)
+//        start.setTitleColor(UIColor.black, for: .normal)
+//        start.addTarget(self, action: #selector(startTimer), for: .touchUpInside)
         /*
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(top)
