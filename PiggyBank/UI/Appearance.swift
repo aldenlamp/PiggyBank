@@ -22,11 +22,13 @@ class Appearance {
         case purple = "purple"
     }
     
-    static let TABLE_CELL_HEIGHT: CGFloat = 150
+    static let TABLE_CELL_HEIGHT: CGFloat = 125
     static let SIDEBAR_WIDTH: CGFloat = 240
     static let OVERLAY_FULL_OPACITY : CGFloat = 0.5
     static let SIDEBAR_SHADOW_OPACITY: Float = 0.7
     static let SIDEBAR_ANIMATION_DURATION = 0.3
+    
+    static let TOTAL_GOAL_COLOR = PigColors.pink
     
     enum Font {
         static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
