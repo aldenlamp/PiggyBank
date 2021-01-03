@@ -14,14 +14,15 @@ class SidebarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = Appearance.Colors.lightBlue
         
         let buttonData = NavigationDataSource.shared.getSidebarData()
         
         
         for i in 0..<buttonData.count {
             
-            let button = UIButton()
+            let button = SidebarButton()
+            
             button.setTitle(buttonData[i].title, for: .normal)
             button.backgroundColor = UIColor.green
 

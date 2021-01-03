@@ -15,7 +15,7 @@ class GoalTableViewCell: UITableViewCell {
     let container = UIView()
     let goalName = UILabel()
     let progressNumberLabel = UILabel()
-    let progressBar = UILabel()
+    let progressBar = ProgressBar()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,9 +48,6 @@ class GoalTableViewCell: UITableViewCell {
         container.addSubview(progressBar)
         progressBar.constrain(to: container, bottomInset: 0, leadingInset: 0, trailingInset: 0);
         
-        progressBar.constrain(against: goalName, topInset: 0)
-        goalName.constrain(against: progressNumberLabel, trailingInset: 0)
-        
         //text settings
         goalName.textAlignment = .center
         goalName.textColor = .white
@@ -59,17 +56,12 @@ class GoalTableViewCell: UITableViewCell {
         //goalName.sizeToFit()
         goalName.font = Appearance.Fonts.goalFont
         progressNumberLabel.font = Appearance.Fonts.goalFont
-
-        goalName.constrain(to: progressNumberLabel, heightInset: 0)
-        goalName.constrain(to: progressBar, heightInset: 0)
     }
     
     func updateData(with data: GoalData) {
         goalName.text = data.name
         progressNumberLabel.text = "\(data.progress)/\(data.goal)"
-        //progressBar.text = data.progress
+        progressBar.setProgress(to: data.progress, outOf: data.goal)
         piggyImage.image = Appearance.getImage(for: data.color)
     }
-    
-    
 }
