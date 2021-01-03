@@ -28,6 +28,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        DataManager.shared.addHistoryItem(startTime: Date(), timeLength: 25, adCount: 3, goalIndex: 0)
         
         tableView.backgroundColor = Appearance.Colors.backgroundColor
         topBar.backgroundColor = Appearance.Colors.lightBlue
