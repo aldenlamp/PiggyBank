@@ -68,22 +68,7 @@ class GoalTableViewCell: UITableViewCell {
         goalName.text = data.name
         progressNumberLabel.text = "\(data.progress)/\(data.goal)"
         //progressBar.text = data.progress
-        switch data.color {
-        case .pink:
-            piggyImage.image = UIImage(named: "pinkPig")
-        case .red:
-            piggyImage.image = UIImage(named: "redPig")
-        case .orange:
-            piggyImage.image = UIImage(named: "orangePig")
-        case .yellow:
-            piggyImage.image = UIImage(named: "yellowPig")
-        case .green:
-            piggyImage.image = UIImage(named: "greenPig")
-        case .blue:
-            piggyImage.image = UIImage(named: "bluePig")
-        case .purple:
-            piggyImage.image = UIImage(named: "purplePig")
-        }
+        piggyImage.image = Appearance.getImage(for: data.color)
     }
     
     

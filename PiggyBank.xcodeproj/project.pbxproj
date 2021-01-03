@@ -17,6 +17,8 @@
 		ADD78B6525A0FEC200F17639 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B6425A0FEC200F17639 /* ProgressBar.swift */; };
 		ADD78B7225A140EE00F17639 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B7125A140EE00F17639 /* Slider.swift */; };
 		BF14972F25A03308009D5610 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14972E25A03308009D5610 /* DataManager.swift */; };
+		BF14974325A184D1009D5610 /* PigTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14974225A184D1009D5610 /* PigTimer.swift */; };
+		BF14974825A18637009D5610 /* UIColor+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14974725A18637009D5610 /* UIColor+Init.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */; };
 		BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9FC2E259F8A8300504181 /* AppDelegate.swift */; };
@@ -70,6 +72,8 @@
 		ADD78B7125A140EE00F17639 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF14972E25A03308009D5610 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		BF14974225A184D1009D5610 /* PigTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PigTimer.swift; sourceTree = "<group>"; };
+		BF14974725A18637009D5610 /* UIColor+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Init.swift"; sourceTree = "<group>"; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
 		BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFA9FC2B259F8A8300504181 /* PiggyBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiggyBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA9FC61259F8C0C00504181 /* UIView+AutoLayout.swift */,
+				BF14974725A18637009D5610 /* UIColor+Init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */,
 				ADD78B6425A0FEC200F17639 /* ProgressBar.swift */,
 				ADD78B7125A140EE00F17639 /* Slider.swift */,
+				BF14974225A184D1009D5610 /* PigTimer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA9FC33259F8A8300504181 /* ViewController.swift in Sources */,
+				BF14974825A18637009D5610 /* UIColor+Init.swift in Sources */,
 				BFC9CD28259FBA38003A024B /* MainNavigationViewController.swift in Sources */,
 				AD11CEF1259FFA9A00767872 /* AddGoalViewController.swift in Sources */,
 				BFC9CD12259FB8DB003A024B /* NavigationDataSource.swift in Sources */,
@@ -528,6 +535,7 @@
 				AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */,
 				AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */,
 				AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */,
+				BF14974325A184D1009D5610 /* PigTimer.swift in Sources */,
 				BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */,
 				ADD78B7225A140EE00F17639 /* Slider.swift in Sources */,
 				BFC9CD18259FBA13003A024B /* ContainerViewController.swift in Sources */,
