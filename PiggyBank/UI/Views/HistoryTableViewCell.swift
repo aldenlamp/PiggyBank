@@ -32,34 +32,43 @@ class HistoryTableViewCell: UITableViewCell {
         
         // adding image, date and goal
         self.addSubview(coinImage)
-        coinImage.constrain(width: Appearance.TABLE_CELL_HEIGHT)
-        coinImage.constrain(to: self, topInset: 0, bottomInset: 0, leadingInset: 0)
+        let padding: CGFloat = 15
+        coinImage.constrain(to: self, topInset: padding, bottomInset: -padding, leadingInset: padding)
+        coinImage.widthAnchor.constraint(equalTo: coinImage.heightAnchor).isActive = true
         
         // adding goal name
         self.addSubview(goalName)
+        self.addSubview(date)
         
         goalName.constrain(to: self, bottomInset: 0, trailingInset: 0)
-        
-        
-        // adding date
-        self.addSubview(date)
+        goalName.constrain(against: date, topInset: 0)
         
         date.constrain(to: goalName, heightInset: 0)
         date.constrain(to: self, topInset: 0, trailingInset: 0)
         date.constrain(against: coinImage, leadingInset: 0)
         date.constrain(against: goalName, bottomInset: 0)
         
-        goalName.constrain(against: date, topInset: 0)
-        goalName.constrain(to: date, heightInset: 0)
+        
+        
+        date.textAlignment = .center
+        goalName.textAlignment = .center
         
         // adding labels to date and goal
-        date.text = "Wed, 12/20, 11:30"
-        date.textAlignment = .center
-        goalName.text = "Biology"
-        goalName.textAlignment = .center
+
+        
+        
     }
     
     func updateData(with data: HistoryData) {
         
+//        data.date
+        
+//        date.text
+        
+//        goalName.text
+        
+        
+        date.text = "Wed, 12/20, 11:30"
+        goalName.text = "Biology"
     }
 }
