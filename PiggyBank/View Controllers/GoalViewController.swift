@@ -17,6 +17,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     let topBar = UIView()
     let addButton = UIButton()
     let barLine = UIView()
+    let topLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +28,28 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.addSubview(topBar)
         self.view.addSubview(barLine)
         barLine.backgroundColor = UIColor.black
+        tableView.backgroundColor = Appearance.Colors.backgroundColor
+        topBar.backgroundColor = Appearance.Colors.backgroundColor
 
         topBar.constrain(height: 100)
         barLine.constrain(height: 1)
         
+        topBar.addSubview(topLabel)
+        topLabel.text = "My Piggy Banks"
+        topLabel.textColor = .white
+        topLabel.constrain(to: topBar, bottomInset: -20, centerXInset: 0)
+        topLabel.font = Appearance.Font.goalTitle
+        topLabel.textAlignment = .center
+        topLabel.constrain(to: topBar, leadingInset: 0, trailingInset: 0)
+        topLabel.constrain(height: 35)
+        
         topBar.addSubview(addButton)
         addButton.constrain(width: 50, height: 50)
-        addButton.constrain(to: topBar, bottomInset: 0, trailingInset: -10)
+        addButton.constrain(to: topBar, trailingInset: -10)
+        addButton.constrain(to: topLabel, centerYInset: 0)
         addButton.setTitle("+", for: .normal)
         addButton.titleLabel?.font =  UIFont(name: "Arial", size: 50)
-        addButton.setTitleColor(UIColor.black, for: .normal)
+        addButton.setTitleColor(UIColor.white, for: .normal)
         addButton.addTarget(self, action: #selector(switchToAdd), for: .touchUpInside)
         
         topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)

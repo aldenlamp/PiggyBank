@@ -29,7 +29,7 @@ class GoalTableViewCell: UITableViewCell {
     func createGoal() {
         piggyImage.image = UIImage(named: "piggyBank") 
         
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = Appearance.Colors.backgroundColor
         
         //adding image and container to goal
         self.addSubview(piggyImage)
