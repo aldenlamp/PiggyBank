@@ -60,6 +60,9 @@ class HistoryTableViewCell: UITableViewCell {
     }
     
     func updateData(with data: HistoryData) {
-        
+        goalName.text = data.name
+        date.text = ""
+        //progressBar.text = data.progress
+        coinImage.image = UIImage(named: "coin")
     }
 }
