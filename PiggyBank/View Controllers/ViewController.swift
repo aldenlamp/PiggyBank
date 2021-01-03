@@ -7,31 +7,58 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SliderDelegate {
+
+    
+    
+    let slider = Slider()
     
     let piggyImage = UIImageView()
-    let slider = UISlider()
     
     let time = UILabel()
     let start = UIButton()
-    
-    let top = UIView()
-    let middle = UIView()
-    let bottom = UIView()
-    
+    let empty = UIButton()
+
     var seconds = 300
     var timer = Timer()
     var isTimerRunning = false
     var isStartEnabled = true
     
+    weak var currentGoal: GoalData?
+    
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor.white
-        self.view.addSubview(time)
-        time.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
-        time.constrain(width: 200, height: 100)
-        time.text = "hello"
-        time.textAlignment = .center
+        self.view.backgroundColor = Appearance.Colors.backgroundColor
         
+        self.view.addSubview(slider)
+        slider.constrain(width: 20, height: 250)
+        slider.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
+        slider.backgroundColor = UIColor.yellow
+        slider.layoutIfNeeded()
+        slider.moveSliderToBottom()
+        slider.delegate = self
+        
+        /*
+        self.view.addSubview(time)
+        time.constrain(to: self.view, topInset: 130, leadingInset: 0, trailingInset: 0, centerXInset: 0)
+        time.constrain(height: 50)
+        time.text = "Total"
+        time.textAlignment = .center
+        time.font = Appearance.Font.goalTitle
+        time.textColor = UIColor.white
+        
+        self.view.addSubview(piggyImage)
+        piggyImage.constrain(width: 275, height: 275)
+        piggyImage.constrain(against: time, topInset: 10)
+        piggyImage.constrain(to: time, centerXInset: 0)
+        piggyImage.image = UIImage(named: "pinkPig")
+        
+        self.view.addSubview(slider)
+        slider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+        slider.constrain(against: piggyImage, leadingInset: 5)
+        slider.constrain(to: self.view, trailingInset: 0)
+        slider.widthAnchor.constraint(equalTo: piggyImage.heightAnchor, constant: 0).isActive = true
+*/
+        /*
         self.view.addSubview(start)
         start.constrain(to: self.view, centerXInset: 0)
         start.constrain(against: time, topInset: 0)
@@ -39,6 +66,7 @@ class ViewController: UIViewController {
         start.setTitle("start", for: .normal)
         start.setTitleColor(UIColor.black, for: .normal)
         start.addTarget(self, action: #selector(startTimer), for: .touchUpInside)
+        */
         /*
         self.view.backgroundColor = UIColor.white
         self.view.addSubview(top)
@@ -90,5 +118,12 @@ class ViewController: UIViewController {
     }
     func restartTimer() {
         //getSliderValue(slider)
+    }
+    func changeGoal() {
+        
+    }
+    
+    func getSliderPosition(proportion: Double) {
+        print(proportion)
     }
 }

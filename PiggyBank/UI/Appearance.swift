@@ -30,8 +30,14 @@ class Appearance {
     
     static let TOTAL_GOAL_COLOR = PigColors.pink
     
+    enum Colors {
+        
+        static let backgroundColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)
+    }
+    
     enum Font {
         static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
+        static let goalTitle = UIFont.systemFont(ofSize: 40, weight: .regular)
     }
     
 }

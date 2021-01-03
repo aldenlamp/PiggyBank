@@ -15,6 +15,7 @@
 		AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */; };
 		AD42785D259FC5A500C14E46 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42785C259FC5A500C14E46 /* GoalViewController.swift */; };
 		ADD78B6525A0FEC200F17639 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B6425A0FEC200F17639 /* ProgressBar.swift */; };
+		ADD78B7225A140EE00F17639 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD78B7125A140EE00F17639 /* Slider.swift */; };
 		BF14972F25A03308009D5610 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14972E25A03308009D5610 /* DataManager.swift */; };
 		BF8D8C90259FF02A00861F63 /* GoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D8C8F259FF02A00861F63 /* GoalModel.swift */; };
 		BF8D8C95259FFDF400861F63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF8D8C94259FFDF400861F63 /* GoogleService-Info.plist */; };
@@ -66,6 +67,7 @@
 		AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD42785C259FC5A500C14E46 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		ADD78B6425A0FEC200F17639 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		ADD78B7125A140EE00F17639 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		BAF7D8F6E4E8FC160281AACD /* Pods_PiggyBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PiggyBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF14972E25A03308009D5610 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BF8D8C8F259FF02A00861F63 /* GoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalModel.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				BFA9FC74259F931000504181 /* GoalTableViewCell.swift */,
 				AD11CEF5259FFFB500767872 /* HistoryTableViewCell.swift */,
 				ADD78B6425A0FEC200F17639 /* ProgressBar.swift */,
+				ADD78B7125A140EE00F17639 /* Slider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				AD11CEF6259FFFB500767872 /* HistoryTableViewCell.swift in Sources */,
 				AD11CEE6259FDEBB00767872 /* GoalData.swift in Sources */,
 				BFA9FC2F259F8A8300504181 /* AppDelegate.swift in Sources */,
+				ADD78B7225A140EE00F17639 /* Slider.swift in Sources */,
 				BFC9CD18259FBA13003A024B /* ContainerViewController.swift in Sources */,
 				BFA9FC31259F8A8300504181 /* SceneDelegate.swift in Sources */,
 				BFC9CD1D259FBA1F003A024B /* SidebarViewController.swift in Sources */,
