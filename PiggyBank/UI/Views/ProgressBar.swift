@@ -10,19 +10,21 @@ import UIKit
 
 class ProgressBar: UIView {
     
-    let titleLabel = UILabel()
+    private let progressTitleLabel = UILabel()
+    private let goalTitleLabel = UILabel()
     
-    let goalView = UIView()
-    let progressView = UIView()
-    let progressLabel = UILabel()
-    let goalLabel = UILabel()
+    private let goalView = UIView()
+    private let progressView = UIView()
+    private let progressLabel = UILabel()
+    private let goalLabel = UILabel()
     
-    var progress = 0
-    var goal = 0
+    
     
     var shouldShowTitle = true {
         didSet {
-            titleLabel.isHidden = !shouldShowTitle
+            progressTitleLabel.isHidden = !shouldShowTitle
+            progressTitleLabelHeightClosed?.isActive = !shouldShowTitle
+            progressTitleLabelHeightOpen?.isActive = shouldShowTitle
         }
     }
     
@@ -33,19 +35,29 @@ class ProgressBar: UIView {
         }
     }
     
-    var progressWidth: NSLayoutConstraint?
+    private var progressWidth: NSLayoutConstraint?
+    private var progressTitleLabelHeightOpen: NSLayoutConstraint?
+    private var progressTitleLabelHeightClosed: NSLayoutConstraint?
     
     init() {
         super.init(frame: .zero)
         
-        self.addSubview(titleLabel)
-        titleLabel.constrain(to: self, topInset: 0, leadingInset: 0, trailingInset: 0)
-        titleLabel.constrain(height: 20)
-        titleLabel.text = "Progress"
+        self.addSubview(progressTitleLabel)
+        progressTitleLabel.constrain(to: self, topInset: 0, leadingInset: 5)
+        progressTitleLabelHeightOpen = progressTitleLabel.heightAnchor.constraint(equalToConstant: 20)
+        progressTitleLabelHeightClosed = progressTitleLabel.heightAnchor.constraint(equalToConstant: 0)
+        progressTitleLabel.text = "Progress"
+        progressTitleLabelHeightOpen?.isActive = true
+        
+        self.addSubview(goalTitleLabel)
+        goalTitleLabel.constrain(to: self, topInset: 0, trailingInset: -5)
+        goalTitleLabel.constrain(against: progressTitleLabel, leadingInset: 0)
+        goalTitleLabel.constrain(to: progressTitleLabel, widthInset: 0, heightInset: 0)
+        
         
         self.addSubview(goalView)
         goalView.constrain(to: self, bottomInset: 0, leadingInset: 0, trailingInset: 0)
-        goalView.constrain(against: titleLabel, topInset: 5)
+        goalView.constrain(against: progressTitleLabel, topInset: 5)
         goalView.backgroundColor = UIColor.white
         
         goalView.addSubview(progressView)

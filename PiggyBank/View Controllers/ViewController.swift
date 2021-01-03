@@ -9,8 +9,6 @@ import UIKit
 
 class ViewController: UIViewController, SliderDelegate {
     
-    let slider = Slider()
-    let piggyImage = UIImageView()
     
     let time = UILabel()
     let start = UIButton()
@@ -35,7 +33,11 @@ class ViewController: UIViewController, SliderDelegate {
     }()
     
     let titleLabel = UILabel()
+    
+    let slider = Slider()
     let pigTimer = PigTimer()
+    
+    let progressBar = ProgressBar()
     
 //    var currentGoal = 0
     
@@ -51,24 +53,36 @@ class ViewController: UIViewController, SliderDelegate {
         
         self.view.addSubview(titleLabel)
         titleLabel.font = Appearance.Fonts.mainTitle
-        titleLabel.constrain(to: self.view, topInset: 60, leadingInset: 40, trailingInset: -40)
+        titleLabel.constrain(to: self.view, topInset: 120, leadingInset: 40, trailingInset: -40)
         titleLabel.textAlignment = .center
         titleLabel.constrain(height: 41)
+        titleLabel.text = "Hello World"
         
         self.view.addSubview(pigTimer)
-        pigTimer.heightAnchor.constraint(equalTo: pigTimer.heightAnchor).isActive = true
-//        pigTimer.constrain(to: self.view, leadingInset: )
-        
-        
+        pigTimer.heightAnchor.constraint(equalTo: pigTimer.widthAnchor).isActive = true
+        pigTimer.constrain(to: self.view, leadingInset: Appearance.PIGTIME_PADDING, trailingInset: -Appearance.PIGTIME_PADDING)
+        pigTimer.constrain(against: titleLabel, topInset: 5)
+        pigTimer.updateTimer(with: 0)
         
         self.view.addSubview(slider)
-        slider.constrain(width: 20, height: 250)
-        slider.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
+        slider.constrain(to: pigTimer, topInset: 0, bottomInset: 0)
+        slider.constrain(against: pigTimer, leadingInset: 15)
+        slider.constrain(width: 20)
         slider.layoutIfNeeded()
         slider.moveSliderToBottom()
         slider.delegate = self
         
         slider.setSliderColor(to: UIColor.black)
+        
+        self.view.addSubview(progressBar)
+        progressBar.constrain(to: self.view, centerXInset: 0)
+        progressBar.constrain(to: slider, trailingInset: -10)
+        progressBar.constrain(against: pigTimer, topInset: 20)
+        progressBar.constrain(height: 60)
+        progressBar.layoutIfNeeded()
+        progressBar.roundCornerRadius()
+        progressBar.setForgroundColor(to: UIColor.blue, withBackground: UIColor.white)
+        
     }
     
     @objc func handleMenuPressed() {
