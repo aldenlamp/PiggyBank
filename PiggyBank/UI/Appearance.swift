@@ -31,13 +31,36 @@ class Appearance {
     static let TOTAL_GOAL_COLOR = PigColors.pink
     
     enum Colors {
-        
         static let backgroundColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)
+        static let borderColor = UIColor(hex: "#707070")
+            
     }
     
     enum Font {
+        static let mainTitle = UIFont.systemFont(ofSize: 40, weight: .bold)
         static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
         static let goalTitle = UIFont.systemFont(ofSize: 40, weight: .regular)
+        static let timerLabelFont = UIFont.systemFont(ofSize: 25, weight: .medium)
+        
+    }
+    
+    static func getImage(for color: PigColors) -> UIImage {
+        switch (color) {
+        case .pink:
+            return UIImage(named: "pinkPig")!
+        case .red:
+            return UIImage(named: "redPig")!
+        case .orange:
+            return UIImage(named: "orangePig")!
+        case .yellow:
+            return UIImage(named: "yellowPig")!
+        case .green:
+            return UIImage(named: "greenPig")!
+        case .blue:
+            return UIImage(named: "bluePig")!
+        case .purple:
+            return UIImage(named: "purplePig")!
+        }
     }
     
 }
