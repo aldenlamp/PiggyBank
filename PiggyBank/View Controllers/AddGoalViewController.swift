@@ -89,7 +89,8 @@ class AddGoalViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @objc func addGoal() {
         delegate.getNewGoalData(name: nameTextField.text!, color: Appearance.PigColors(rawValue: color)!, goal: Int(goalTextField.text!)!, progress: 0)
-        
+        nameTextField.text = ""
+        goalTextField.text = ""
         self.dismiss(animated: true, completion: nil)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

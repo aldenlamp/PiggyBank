@@ -6,47 +6,89 @@
 //
 
 import UIKit
-import GoogleMobileAds
 
-class ViewController: UIViewController, GADRewardedAdDelegate {
-
+class ViewController: UIViewController {
     
-    let testButton = UIButton()
-    var ad = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
-
+    let piggyImage = UIImageView()
+    let slider = UISlider()
+    
+    let time = UILabel()
+    let start = UIButton()
+    
+    let top = UIView()
+    let middle = UIView()
+    let bottom = UIView()
+    
+    var seconds = 300
+    var timer = Timer()
+    var isTimerRunning = false
+    var isStartEnabled = true
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.white
+        self.view.addSubview(time)
+        time.constrain(to: self.view, centerYInset: 0, centerXInset: 0)
+        time.constrain(width: 200, height: 100)
+        time.text = "hello"
+        time.textAlignment = .center
         
+        self.view.addSubview(start)
+        start.constrain(to: self.view, centerXInset: 0)
+        start.constrain(against: time, topInset: 0)
+        start.constrain(width: 100, height: 30)
+        start.setTitle("start", for: .normal)
+        start.setTitleColor(UIColor.black, for: .normal)
+        start.addTarget(self, action: #selector(startTimer), for: .touchUpInside)
+        /*
+        self.view.backgroundColor = UIColor.white
+        self.view.addSubview(top)
+        top.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
+        self.view.addSubview(middle)
+        middle.constrain(to: self.view, leadingInset: 0, trailingInset: 0)
+        self.view.addSubview(bottom)
+        bottom.constrain(to: self.view, bottomInset: 0, leadingInset: 0, trailingInset: 0)
+        top.constrain(against: middle, bottomInset: 0)
+        middle.constrain(against: bottom, bottomInset: 0)
+        top.constrain(to: middle, heightInset: 0)
+        top.constrain(to: bottom, heightInset: 0)
         
-        testButton.setTitle("Click for add", for: .normal)
-        testButton.backgroundColor = UIColor.blue
-        testButton.titleLabel?.textAlignment = .center
-        self.view.addSubview(testButton)
+        middle.addSubview(piggyImage)
+        piggyImage.image = UIImage(named: "pinkPig")
+        piggyImage.widthAnchor.constraint(equalTo: piggyImage.heightAnchor, constant: 0).isActive = true
+        piggyImage.constrain(to: middle, centerXInset: 0)
+        middle.addSubview(slider)
+        slider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+        slider.constrain(to: middle, leadingInset: 0, trailingInset: 0)
+        slider.constrain(against: piggyImage, topInset: 10)
+        slider.widthAnchor.constraint(equalTo: piggyImage.heightAnchor, constant: 0).isActive = true
+        slider.constrain(height: 30)
         
-        testButton.constrain(to: self.view, leadingInset: 20, trailingInset: -20, centerYInset: 0)
-        testButton.constrain(height: 30)
-        testButton.addTarget(self, action: #selector(launchAdd), for: .touchUpInside)
-        
-        ad.load(GADRequest(), completionHandler: nil)
+        slider.minimumValue = 0
+        slider.maximumValue = 24
+        slider.isContinuous = true
+        */
     }
-    
-    @objc func launchAdd() {
-        if ad.isReady {
-            ad.present(fromRootViewController: self, delegate: self)
-            
+    @objc func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
+    }
+    func timeString(time: TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    @objc func updateTimer() {
+        if seconds < 1 {
+            timer.invalidate()
+            isTimerRunning = false
+            restartTimer()
+        } else {
+            seconds -= 1
+            time.text = timeString(time: TimeInterval(seconds))
         }
     }
-    
-    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
-        print("ASDFASDFASDF: \(reward.type) \(reward.amount)")
-        self.dismiss(animated: true, completion: nil)
-        reloadAd()
-    }
-    
-    func reloadAd() {
-        ad = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
-        ad.load(GADRequest(), completionHandler: nil)
+    func restartTimer() {
+        //getSliderValue(slider)
     }
 }
