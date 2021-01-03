@@ -18,6 +18,17 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     let addButton = UIButton()
     let barLine = UIView()
     let topLabel = UILabel()
+    let menuButton: UIButton = {
+        let mView = UIButton()
+        for i in 0..<3 {
+            let topBar = UIView(frame: CGRect(x: 0, y: i*9, width: 30, height: 4))
+            topBar.layer.cornerRadius = 2
+            topBar.backgroundColor = UIColor.white
+            mView.addSubview(topBar)
+        }
+        mView.constrain(width: 30, height: 22)
+        return mView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +40,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.addSubview(barLine)
         barLine.backgroundColor = UIColor.black
         tableView.backgroundColor = Appearance.Colors.backgroundColor
-        topBar.backgroundColor = Appearance.Colors.backgroundColor
+        topBar.backgroundColor = Appearance.Colors.lightBlue
 
         topBar.constrain(height: 100)
         barLine.constrain(height: 1)
@@ -37,20 +48,25 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         topBar.addSubview(topLabel)
         topLabel.text = "My Piggy Banks"
         topLabel.textColor = .white
-        topLabel.constrain(to: topBar, bottomInset: -20, centerXInset: 0)
+        topLabel.constrain(to: topBar, bottomInset: -10, centerXInset: 0)
         topLabel.font = Appearance.Fonts.goalTitle
         topLabel.textAlignment = .center
         topLabel.constrain(to: topBar, leadingInset: 0, trailingInset: 0)
-        topLabel.constrain(height: 35)
+        topLabel.constrain(height: 45)
         
         topBar.addSubview(addButton)
         addButton.constrain(width: 50, height: 50)
-        addButton.constrain(to: topBar, trailingInset: -10)
+        addButton.constrain(to: topBar, trailingInset: -20)
         addButton.constrain(to: topLabel, centerYInset: 0)
         addButton.setTitle("+", for: .normal)
         addButton.titleLabel?.font =  UIFont(name: "Arial", size: 50)
         addButton.setTitleColor(UIColor.white, for: .normal)
         addButton.addTarget(self, action: #selector(switchToAdd), for: .touchUpInside)
+        
+        topBar.addSubview(menuButton)
+        menuButton.constrain(to: topBar, topInset: 60, leadingInset: 30)
+        menuButton.constrain(width: 30, height: 22)
+        menuButton.addTarget(self, action: #selector(handleMenuPressed), for: .touchUpInside)
         
         topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
         barLine.constrain(to: self.view, leadingInset: 0, trailingInset: 0)
@@ -92,31 +108,8 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         DataManager.shared.addGoalData(name: name, progress: progress, goal: goal, color: color)
     }
     
-//    func getNewGoalData() {
-//        let actualColor: Appearance.PigColors
-//        let name = addGoalVC.nameTextField.text!
-//        let progress = 0
-//        let goal = Int(addGoalVC.goalTextField.text!)!
-//        switch addGoalVC.color {
-//        case "pink":
-//            actualColor = .pink
-//        case "red":
-//            actualColor = .red
-//        case "orange":
-//            actualColor = .orange
-//        case "yellow":
-//            actualColor = .yellow
-//        case "green":
-//            actualColor = .green
-//        case "blue":
-//            actualColor = .blue
-//        case "purple":
-//            actualColor = .purple
-//        default:
-//            actualColor = .pink
-//        }
-//        list.append(GoalData(color: actualColor, name: name, progress: progress, goal: goal))
-//        addGoalVC = AddGoalViewController()
-//    }
+    @objc func handleMenuPressed() {
+        NotificationCenter.default.post(name: NotificationNames.toggleSideBar.notification, object: nil)
+    }
 }
 

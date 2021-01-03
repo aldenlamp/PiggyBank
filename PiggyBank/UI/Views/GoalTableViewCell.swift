@@ -53,7 +53,9 @@ class GoalTableViewCell: UITableViewCell {
         
         //text settings
         goalName.textAlignment = .center
+        goalName.textColor = .white
         progressNumberLabel.textAlignment = .center
+        progressNumberLabel.textColor = .white
         //goalName.sizeToFit()
         goalName.font = goalName.font.withSize(30)
         progressNumberLabel.font = goalName.font.withSize(30)
