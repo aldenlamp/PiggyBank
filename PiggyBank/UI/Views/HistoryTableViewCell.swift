@@ -24,6 +24,7 @@ class HistoryTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func createHistoryCell() {
+        self.backgroundColor = Appearance.Colors.backgroundColor
         // instead of piggyBank should be coinImage
         coinImage.image = UIImage(named: "coin")
         

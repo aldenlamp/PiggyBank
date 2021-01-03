@@ -12,29 +12,32 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     let tableView = UITableView()
     let topBar = UIView()
+    let historyLabel = UILabel()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        view.backgroundColor = Appearance.Colors.backgroundColor
-        
+        tableView.backgroundColor = Appearance.Colors.backgroundColor
+        topBar.backgroundColor = Appearance.Colors.lightBlue
         self.view.addSubview(tableView)
         self.view.addSubview(topBar)
-        self.view.addSubview(barLine)
+        topBar.addSubview(historyLabel)
         
         topBar.constrain(height: 100)
-        barLine.constrain(height: 1)
         
         topBar.constrain(to: self.view, topInset: 0, leadingInset: 0, trailingInset: 0)
-        barLine.constrain(to: self.view, leadingInset: 0, trailingInset: 0)
-        barLine.constrain(against: topBar, topInset: 0)
-        tableView.constrain(against: barLine, topInset: 0)
+        tableView.constrain(against: topBar, topInset: 0)
         tableView.constrain(to: self.view, bottomInset: 0, leadingInset: 0, trailingInset: 0)
         
         tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "cellIdentifier1")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        historyLabel.text = "History"
+        historyLabel.textAlignment = .center
+        historyLabel.textColor = .white
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
