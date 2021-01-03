@@ -22,12 +22,10 @@ class SidebarViewController: UIViewController {
         for i in 0..<buttonData.count {
             
             let button = SidebarButton()
-            
-            button.setTitle(buttonData[i].title, for: .normal)
-            button.backgroundColor = UIColor.green
+            button.addButton(named: buttonData[i].title)
 
             self.view.addSubview(button)
-            button.constrain(to: self.view, topInset: CGFloat(70 + i * 70), centerXInset: 0)
+            button.constrain(to: self.view, topInset: CGFloat(70 + i * 70 + 50), centerXInset: 0)
             button.constrain(width: Appearance.SIDEBAR_WIDTH, height: 40)
 
             button.tag = i

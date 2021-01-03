@@ -17,8 +17,12 @@ class SidebarButton: UIButton {
         self.addSubview(icon)
         self.addSubview(pageName)
         icon.image = UIImage(named: name)
+        icon.constrain(width: 40)
         icon.constrain(to: self, topInset: 0, bottomInset: 0, leadingInset: 0)
         pageName.text = name
+        pageName.textAlignment = .left
+        pageName.textColor = .white
+        pageName.font = Appearance.Fonts.sidebarFont
         pageName.constrain(to: self, topInset: 0, bottomInset: 0, trailingInset: 0)
         pageName.constrain(against: icon, leadingInset: 0)
     }
