@@ -30,6 +30,8 @@ class Appearance {
     
     static let PIGTIME_PADDING: CGFloat = 75
     
+    static let PROGRESSBAR_TITLE_PADDING: CGFloat = 10
+    
     static let TOTAL_GOAL_COLOR = PigColors.pink
     
     enum Colors {
@@ -44,6 +46,8 @@ class Appearance {
         static let contentTitle = UIFont.systemFont(ofSize: 22, weight: .regular)
         static let goalTitle = UIFont.systemFont(ofSize: 35, weight: .regular)
         static let timerLabelFont = UIFont.systemFont(ofSize: 25, weight: .medium)
+        static let progressTitleFont = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        static let switchBanksButton = UIFont.systemFont(ofSize: 23, weight: .medium)
         static let addGoalMinute = UIFont.systemFont(ofSize: 25, weight: .regular)
         static let goalFont = UIFont.systemFont(ofSize: 30, weight: .regular)
         static let sidebarFont = UIFont.systemFont(ofSize: 25, weight: .regular)
