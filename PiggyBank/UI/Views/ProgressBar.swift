@@ -23,6 +23,9 @@ class ProgressBar: UIView {
     var shouldShowTitle = true {
         didSet {
             progressTitleLabel.isHidden = !shouldShowTitle
+            progressTitleLabelHeightClosed?.isActive = false
+            progressTitleLabelHeightOpen?.isActive = false
+            
             progressTitleLabelHeightClosed?.isActive = !shouldShowTitle
             progressTitleLabelHeightOpen?.isActive = shouldShowTitle
         }
@@ -48,6 +51,7 @@ class ProgressBar: UIView {
         progressTitleLabelHeightClosed = progressTitleLabel.heightAnchor.constraint(equalToConstant: 0)
         progressTitleLabel.text = "Progress"
         progressTitleLabel.textAlignment = .left
+        progressTitleLabelHeightClosed?.isActive = false
         progressTitleLabelHeightOpen?.isActive = true
         progressTitleLabel.textColor = UIColor.white
         progressTitleLabel.font = Appearance.Fonts.progressTitleFont
@@ -91,9 +95,11 @@ class ProgressBar: UIView {
     }
     
     func setProgress(to progress: Int, outOf goal: Int) {
-        progressWidth?.isActive = false
+        progressWidth?.isActive = false;
         
-        progressWidth = progressView.widthAnchor.constraint(equalTo: goalView.widthAnchor, multiplier: goal == 0 ? 1 : CGFloat(progress)/CGFloat(goal))    
+        let mult = (CGFloat(progress)) / (goal == 0 ? 1.0 : CGFloat(goal))
+        
+        progressWidth = progressView.widthAnchor.constraint(equalTo: goalView.widthAnchor, multiplier: mult > 1 ? 1.0 : mult)
         progressWidth?.isActive = true
         
         progressLabel.text = "\(progress)"

@@ -19,6 +19,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             let topBar = UIView(frame: CGRect(x: 0, y: i*9, width: 30, height: 4))
             topBar.layer.cornerRadius = 2
             topBar.backgroundColor = UIColor.white
+            topBar.isUserInteractionEnabled = false
             mView.addSubview(topBar)
         }
         mView.constrain(width: 30, height: 22)
@@ -28,7 +29,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        DataManager.shared.addHistoryItem(startTime: Date(), timeLength: 25, adCount: 3, goalIndex: 0)
+
         
         tableView.backgroundColor = Appearance.Colors.backgroundColor
         topBar.backgroundColor = Appearance.Colors.lightBlue
@@ -55,6 +56,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         menuButton.constrain(to: topBar, topInset: 60, leadingInset: 30)
         menuButton.addTarget(self, action: #selector(handleMenuPressed), for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(forName: NotificationNames.historyDataLoaded.notification, object: nil, queue: nil, using: historyDataLoaded(notification:))
+    }
+    
+    @objc func historyDataLoaded(notification: Notification) {
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -71,6 +78,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataManager.shared.historyData.count
     }
+    
     @objc func handleMenuPressed() {
         NotificationCenter.default.post(name: NotificationNames.toggleSideBar.notification, object: nil)
     }

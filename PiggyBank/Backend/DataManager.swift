@@ -32,6 +32,8 @@ class DataManager {
                 userID = "No Working Key"
             }
         }
+        addTotal()
+        NotificationCenter.default.post(name: NotificationNames.historyDataLoaded.notification, object: nil)
     }
     
     func getId() -> String {
@@ -58,6 +60,7 @@ class DataManager {
                 
                 self?.historyData.append(historyItem)
             }
+            self?.updateGoalTotal()
             self?.sortHistoryData()
             NotificationCenter.default.post(name: NotificationNames.historyDataLoaded.notification, object: nil)
         }
@@ -83,6 +86,8 @@ class DataManager {
                 
                 self?.goalData.append(goalItem)
             }
+            self?.sortGoals()
+            self?.sortHistoryData()
             self?.addTotal()
             NotificationCenter.default.post(name: NotificationNames.goalDataLoaded.notification, object: nil)
 
@@ -116,12 +121,12 @@ class DataManager {
             return
         }
         
-        for i in 1..<historyData.count - 1 {
-            var maxDate = historyData[i].date
+        for i in 0..<historyData.count - 1 {
+            var maxDate = Double(historyData[i].date.timeIntervalSince1970)
             var maxIndex = 0
             for j in i..<historyData.count {
-                if historyData[j].date > maxDate {
-                    maxDate = historyData[j].date
+                if Double(historyData[j].date.timeIntervalSince1970) > maxDate {
+                    maxDate = Double(historyData[j].date.timeIntervalSince1970)
                     maxIndex = j
                 }
             }
@@ -132,7 +137,33 @@ class DataManager {
         }
     }
     
-    
+    func sortGoals() {
+        if goalData.count <= 1 {
+            return
+        }
+        
+        let start = goalData[0].name == "total" ? 1 : 0
+        
+        if start == 1 && goalData.count == 2 {
+            return
+        }
+        
+        for i in start..<goalData.count - 1 {
+            var maxIndex = i
+            var name = goalData[i].name
+            for j in i+1..<goalData.count {
+                if goalData[j].name > name {
+                    name = goalData[j].name
+                    maxIndex = j
+                }
+            }
+            
+            let temp = goalData[i]
+            goalData[i] = goalData[maxIndex]
+            goalData[maxIndex] = temp
+        }
+        
+    }
     
     func addTotal() {
         var totalTime = 0
@@ -144,6 +175,39 @@ class DataManager {
         
         let totalGoal = GoalData(goalID: "total", color: Appearance.TOTAL_GOAL_COLOR, name: "Total", progress: totalTime, goal: 0)
         goalData.insert(totalGoal, at: 0)
+    }
+    
+    func updateGoalTotal() {
+        var totalTime = 0
+        for i in historyData {
+            totalTime += i.length
+        }
+        goalData[0].progress = totalTime
+        
+        
+        
+    }
+    
+    func getGoalName(of id: String) -> String{
+        for i in 0..<goalData.count {
+            if goalData[i].goalID == id {
+                return goalData[i].name
+            }
+        }
+        return ""
+    }
+    
+    func emptyGoalName(of index: Int) {
+        let id = goalData[index].goalID
+        goalData[index].progress = 0
+        ref.child("goals").child(userID).child(id).child("progress").setValue(0)
+        
+        for i in 0..<historyData.count {
+            if historyData[i].goalID == id {
+                ref.child("history").child(userID).child(historyData[i].historyID).child("goalID").setValue("total")
+            }
+        }
+        
         
     }
     

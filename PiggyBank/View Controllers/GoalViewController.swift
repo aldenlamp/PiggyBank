@@ -12,6 +12,14 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 //    var list = [GoalData]()
     var addGoalVC = AddGoalViewController()
+    
+    var isSelection = false {
+        didSet {
+            menuButton.isHidden = true
+        }
+    }
+    
+    weak var delegate: selectGoalDelegate?
 
     let tableView = UITableView()
     let topBar = UIView()
@@ -23,6 +31,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
             let topBar = UIView(frame: CGRect(x: 0, y: i*9, width: 30, height: 4))
             topBar.layer.cornerRadius = 2
             topBar.backgroundColor = UIColor.white
+            topBar.isUserInteractionEnabled = false
             mView.addSubview(topBar)
         }
         mView.constrain(width: 30, height: 22)
@@ -75,6 +84,7 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         addGoalVC.delegate = self
         
         NotificationCenter.default.addObserver(forName: NotificationNames.goalDataLoaded.notification, object: nil, queue: nil, using: reloadData(notification:))
+        NotificationCenter.default.addObserver(forName: NotificationNames.historyDataLoaded.notification, object: nil, queue: nil, using: reloadData(notification:))
     }
     
     @objc func reloadData(notification: Notification? = nil) {
@@ -98,6 +108,11 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
         present(addGoalVC, animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\n\nSELECTED: \(indexPath.row)")
+        delegate?.goalSelected(with: indexPath.row)
+    }
+    
     func getNewGoalData(name: String, color: Appearance.PigColors, goal: Int, progress: Int) {
         DataManager.shared.addGoalData(name: name, progress: progress, goal: goal, color: color)
     }
@@ -108,3 +123,6 @@ class GoalViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 }
 
+protocol selectGoalDelegate: class {
+    func goalSelected(with index: Int)
+}

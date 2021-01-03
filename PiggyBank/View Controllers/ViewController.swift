@@ -6,19 +6,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ViewController: UIViewController, SliderDelegate {
+class ViewController: UIViewController, SliderDelegate, selectGoalDelegate, GADRewardedAdDelegate {
     
-    
-    let time = UILabel()
-//    let start = UIButton()
-//    let empty = UIButton()
-
-    var seconds = 300
-    var timer = Timer()
-    var isTimerRunning = false
-    var isStartEnabled = true
-    
+    let MAX_MINUTES: Int = 120
     
     let menuButton: UIButton = {
         let mView = UIButton()
@@ -39,6 +31,21 @@ class ViewController: UIViewController, SliderDelegate {
     let pigTimer = PigTimer()
     
     let progressBar = ProgressBar()
+    
+    var goalIndex: Int = 0
+    
+    var startTime: Date = Date()
+    var minutes: Int = 0
+    var adCount: Int = 0
+    
+    var isTimerRunning = false
+    
+    var seconds = 0
+    var timer = Timer()
+    var adTimer = Timer()
+    
+    var adIsRunning = false
+    var ad = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
     
     let switchBanksButton: UIButton = {
         let button = UIButton()
@@ -137,6 +144,19 @@ class ViewController: UIViewController, SliderDelegate {
         emptyButton.setTitle("Empty", for: .normal)
         emptyButton.addShadow()
         emptyButton.addClickShadow()
+        
+        NotificationCenter.default.addObserver(forName: NotificationNames.goalDataLoaded.notification, object: nil, queue: nil, using: goalDataLoaded(notification: ))
+        NotificationCenter.default.addObserver(forName: NotificationNames.historyDataLoaded.notification, object: nil, queue: nil, using: goalDataLoaded(notification: ))
+        
+        updateData()
+        
+        
+        ad.load(GADRequest(), completionHandler: nil)
+        
+    }
+    
+    @objc func goalDataLoaded(notification: Notification) {
+        updateData()
     }
     
     @objc func handleMenuPressed() {
@@ -144,41 +164,126 @@ class ViewController: UIViewController, SliderDelegate {
     }
     
     @objc func handleSwitchBanks() {
-        
+        let goalView = GoalViewController()
+        goalView.isSelection = true
+        goalView.delegate = self
+        self.present(goalView, animated: true, completion: nil)
     }
     
     @objc func handleStart() {
-        
+        startTimer()
     }
     
     @objc func handleEmpty() {
+        DataManager.shared.emptyGoalName(of: goalIndex)
+    }
+    
+    func goalSelected(with index: Int) {
+        goalIndex = index
+        updateData()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func updateData() {
+        if DataManager.shared.goalData.count <= goalIndex {
+            return
+        }
         
+        let data = DataManager.shared.goalData[goalIndex]
+        
+        self.titleLabel.text = data.name
+        self.progressBar.setProgress(to: data.progress, outOf: data.goal)
+        self.pigTimer.pigColor = data.color
+        
+        if goalIndex == 0 {
+            emptyButton.isUserInteractionEnabled = false
+            emptyButton.backgroundColor = emptyButton.backgroundColor?.withAlphaComponent(0.5)
+        } else {
+            emptyButton.isUserInteractionEnabled = true
+            emptyButton.backgroundColor = emptyButton.backgroundColor?.withAlphaComponent(1)
+        }
     }
     
     @objc func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
+        isTimerRunning = true
+        startTime = Date()
+        seconds = minutes * 60
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+        startButton.backgroundColor = startButton.backgroundColor?.withAlphaComponent(0.5)
+        startButton.isUserInteractionEnabled = false
+        emptyButton.backgroundColor = emptyButton.backgroundColor?.withAlphaComponent(0.5)
+        emptyButton.isUserInteractionEnabled = false
+        switchBanksButton.backgroundColor = switchBanksButton.backgroundColor?.withAlphaComponent(0.5)
+        switchBanksButton.isUserInteractionEnabled = false
     }
     
     @objc func updateTimer() {
         if seconds < 1 {
             timer.invalidate()
             isTimerRunning = false
-            restartTimer()
+            DataManager.shared.addHistoryItem(startTime: startTime, timeLength: minutes, adCount: adCount, goalIndex: goalIndex)
+            
+            minutes = 0
+            pigTimer.updateTimer(with: minutes)
+            slider.moveSliderToBottom()
+            
+            startButton.backgroundColor = startButton.backgroundColor?.withAlphaComponent(1)
+            startButton.isUserInteractionEnabled = true
+            emptyButton.backgroundColor = emptyButton.backgroundColor?.withAlphaComponent(1)
+            emptyButton.isUserInteractionEnabled = true
+            switchBanksButton.backgroundColor = switchBanksButton.backgroundColor?.withAlphaComponent(1)
+            switchBanksButton.isUserInteractionEnabled = true
+            
+            if adIsRunning {
+                adIsRunning = false
+                dismiss(animated: true, completion: nil)
+                ad = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
+                ad.load(GADRequest(), completionHandler: nil)
+                adTimer.invalidate()
+            }
+            
         } else {
             seconds -= 1
-//            time.text = timeString(time: TimeInterval(seconds))
+            if seconds >= 60*60 {
+                pigTimer.updateTimer(with: seconds * 60)
+            } else {
+                pigTimer.updateTimer(with: seconds)
+            }
+            
         }
-    }
-    
-    func restartTimer() {
-        //getSliderValue(slider)
-    }
-    
-    func changeGoal() {
+        
+        if ad.isReady && !adIsRunning{
+            adIsRunning = true
+            ad.present(fromRootViewController: self, delegate: self)
+            adTimer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(updateAdTimer), userInfo: nil, repeats: false)
+            wasRewarded = false
+        }
         
     }
     
+    @objc func updateAdTimer() {
+        if wasRewarded{
+            adTimer.invalidate()
+            dismiss(animated: true, completion: nil)
+            adIsRunning = false
+            ad = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
+            ad.load(GADRequest(), completionHandler: nil)
+        } else {
+            adTimer = Timer.scheduledTimer(timeInterval: 16, target: self, selector: #selector(updateAdTimer), userInfo: nil, repeats: false)
+        }
+    }
+    
+    var wasRewarded = false
+    
+    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
+        adCount += 1
+        wasRewarded = true
+    }
+    
     func getSliderPosition(proportion: Double) {
-     //   print(proportion)
+        let min = Int(proportion * Double(MAX_MINUTES))
+        minutes = min
+        pigTimer.updateTimer(with: min)
     }
 }
